@@ -7,6 +7,7 @@ import IssueMain from './IssueMain';
 
 //style
 const IssueLayout = styled.div`
+  margin-top: 16px;
   padding: 16px;
 `;
 

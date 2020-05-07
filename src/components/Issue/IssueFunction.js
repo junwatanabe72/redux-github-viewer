@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import IssueTitle from './IssueTitle';
-import IssueNewButton from './IssueNewButton';
+import IssueButtons from './IssueButtons';
 import IssueSearch from './IssueSearch';
-import IssueDelButton from './IssueDelButton';
-import IssueMain from './IssueMain';
 
 import styled from 'styled-components';
 
 const IssueFunctionLayoutElement = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
-
-const newButton = styled.div`
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
 `;
 
 function IssueFunction() {
@@ -22,8 +15,7 @@ function IssueFunction() {
     <IssueFunctionLayoutElement>
       <IssueTitle />
       <IssueSearch />
-      <IssueNewButton />
-      <IssueDelButton />
+      <IssueButtons />
     </IssueFunctionLayoutElement>
   );
 }

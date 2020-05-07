@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 function IssueTitle() {
-  return <div>Issue</div>;
+  return <h2>Issue</h2>;
 }
 
 export default IssueTitle;
