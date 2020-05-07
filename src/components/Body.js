@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Top from './Top/Top';
@@ -13,7 +13,7 @@ const LBody = styled.div`
   padding: 32px 16px;
 `;
 
-function Body() {
+function Body(props) {
   return (
     <LBody>
       <Route exact path="/" component={Top}></Route>

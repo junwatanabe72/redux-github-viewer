@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-function IssueTitle() {
-  return <div>Issue</div>;
+function IssueTitle(props) {
+  return <h2>Issue</h2>;
 }
 
 export default IssueTitle;

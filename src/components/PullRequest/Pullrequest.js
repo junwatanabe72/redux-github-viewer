@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
-function PullRequest() {
+function PullRequest(props) {
   return <div>PullRequestのページ</div>;
 }
 

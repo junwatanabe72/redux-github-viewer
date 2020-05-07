@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0; 
   }
+  h2{
+    padding: 0;
+    margin: 0; 
+  }
   ul {
     padding: 0;
     margin: 0; 
@@ -25,9 +29,10 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: white;
   }
   a:visited {
-    color: white;
+    color: none;
   }
 `;
 
