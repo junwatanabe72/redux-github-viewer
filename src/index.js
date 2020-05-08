@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import styled, { createGlobalStyle } from 'styled-components';
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
+import Store from './reducers/Store';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -39,7 +41,9 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <Provider store={Store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

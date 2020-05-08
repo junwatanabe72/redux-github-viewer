@@ -14,11 +14,7 @@ const Button = styled.a`
   border-bottom: 2px solid rgb(175, 28, 42);
 `;
 
-<<<<<<< HEAD
 function IssueDelButton(props) {
-=======
-function IssueDelButton() {
->>>>>>> 37d8ff9ebf87e7d2407037e2296f499345804ca0
   return <Button>delete</Button>;
 }
 
