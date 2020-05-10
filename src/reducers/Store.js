@@ -1,28 +1,46 @@
-import { createStore } from 'redux';
+import React from 'react';
+import ReacThOM from 'react-dom';
 
-const initalState = {
-  1: { issue: 'Issue', status: 'Status', creater: 'Creater', date: 'Date', updateDate: 'Update' },
-};
+// Action Type:
+const ADD_ISSUE = 'ADD_ISSUE';
+// const REMOVE_TODO = 'REMOVE_TODO'
 
-function reducer(state = initalState, action) {
-  switch (action.type) {
-    case 'ADD':
-      return {
-        issue: 'Issue1',
-        status: 'Status1',
-        creater: 'Creater1',
-        date: 'Date1',
-        updateDate: 'Update1',
-      };
-    case 'DELETE':
-      return {
-        issue: 'Issue2',
-        status: 'Status2',
-        creater: 'Creater2',
-        date: 'Date2',
-        updateDate: 'Update2',
-      };
-  }
+// Action Creators:
+function addIssue(issue) {
+  return { type: 'ADD_ISSUE', payload: issue };
 }
 
-export default createStore(reducer);
+// function removeTodo(todo) {
+//   return { type: 'REMOVE_TODO', payload: todo };
+// }
+
+const initialData = {
+  1: { issue: 'Issue1', status: 'status1' },
+  2: { issue: 'Issue2', status: 'status2' },
+  3: { issue: 'Issue3', status: 'status3' },
+};
+
+const initialState = {
+  index: Object.values(initialData).length,
+  data: initialData,
+};
+
+export function reducer(state = initialState, action) {
+  let newState = { ...state };
+  const { issue, status } = action.payload || {};
+  switch (action.type) {
+    case ADD_ISSUE:
+      newState.index++;
+      newState.data[newState.index] = { issue, status };
+      return newState;
+    // case REMOVE_TODO:
+    //   let newData = { ...newState.data };
+    //   delete newData[id];
+    //   return {
+    //     ...newState,
+    //     data: newData,
+    //   };
+    default:
+      return state;
+  }
+}

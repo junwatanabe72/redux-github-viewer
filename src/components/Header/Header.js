@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import HeaderTitle from './HeaderTitle';
 import HeaderLink from './HeaderLink';
 import HeaderMenu from './HeaderMenu';
-import HeaderModal from '../Modal/HeaderModal';
 
 //style
 const HeaderElement = styled.div`
@@ -21,7 +19,7 @@ function Header(props) {
   const [modalIsOpen, setModal] = useState(false);
 
   const openModal = () => {
-    setModal(true);
+    setModal(!modalIsOpen);
   };
 
   const closeModal = () => {
@@ -33,11 +31,8 @@ function Header(props) {
       <HeaderElement>
         <HeaderTitle />
         <HeaderLink />
-        <HeaderMenu openModal={openModal} />
+        <HeaderMenu openModal={openModal} modalIsOpen={modalIsOpen} />
       </HeaderElement>
-      <Modal isOpen={modalIsOpen} onClick={closeModal}>
-        <HeaderModal closeModal={closeModal} />
-      </Modal>
     </React.Fragment>
   );
 }

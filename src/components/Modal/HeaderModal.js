@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LinkButton from '../LinkCom/LinkCom';
 
 const Layout = styled.ul`
-  color: black;
+  display: inline-block;
 `;
 
 function HeaderModal(props) {

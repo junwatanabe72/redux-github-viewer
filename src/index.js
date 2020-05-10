@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReacThOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import styled, { createGlobalStyle } from 'styled-components';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
-import Store from './reducers/Store';
+import { reducer } from './reducers/Store';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -38,10 +39,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-ReactDOM.render(
+/* eslint-disable no-underscore-dangle */
+const store = createStore(
+  reducer /* preloadedState, */,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+/* eslint-enable */
+
+ReacThOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <Provider store={Store}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,

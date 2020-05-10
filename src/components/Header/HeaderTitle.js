@@ -5,7 +5,7 @@ import LinkButton from '../LinkCom/LinkCom';
 const Layout = styled.div`
   display: inline-block;
   font-size: 26px;
-  margin: 0 16px;
+  margin: 0 8px;
 `;
 
 function HeaderTitle(props) {
