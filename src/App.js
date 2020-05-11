@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 //components
-import Header from './components/Header/Header';
-import Body from './components/Body';
+import Header from './components/Templates/Header';
+import Body from './components/Templates/Body';
 //styled-components
 import styled from 'styled-components';
 //modal

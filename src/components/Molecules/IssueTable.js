@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import TableHead from './TableHead';
-import TableData from './TableData';
+import TableHead from '../Atoms/TableHead';
+import TableData from '../Atoms/TableData';
 
 const StyledTable = styled.table`
   min-width: 240px;
@@ -11,12 +11,6 @@ const StyledTable = styled.table`
   border-collapse: collapse;
   border-top: solid 1px #ccc;
 `;
-
-// const Th = styled.Th`
-//   border-top: solid 1px #ccc;
-//   border-bottom: solid 1px #ccc;
-//   text-align: center;
-// `;
 
 function mapStateToProps(state) {
   return { data: state.data };
@@ -29,11 +23,11 @@ function Table({ data }) {
       <tbody>
         <TableHead />
         {list.map((value) => (
-          <TableData issue={value.issue} status={value.status} />
+          <TableData key={value.id} item={value} />
         ))}
       </tbody>
     </StyledTable>
   );
 }
 
-export default Table = connect(mapStateToProps)(Table);
+export default connect(mapStateToProps)(Table);

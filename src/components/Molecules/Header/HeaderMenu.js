@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeaderModal from '../Modal/HeaderModal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import HeaderModal from './HeaderModal';
+import ComponentFontAwesomeIcon from '../../Atoms/FontAwesomeIcon';
 
-const Layout = styled.div`
+const Container = styled.div`
   display: inline-block;
   margin: 0 16px 0 auto;
   cursor: pointer;
@@ -21,12 +21,12 @@ const PositionAbsolute = styled.div`
 
 function HeaderMenu(props) {
   return (
-    <Layout onClick={props.openModal}>
-      <FontAwesomeIcon icon={['fas', 'bars']} />
+    <Container onClick={props.workModal}>
+      <ComponentFontAwesomeIcon head={'fas'} tail={'bars'} />
       <PositionAbsolute modalIsOpen={props.modalIsOpen}>
         <HeaderModal />
       </PositionAbsolute>
-    </Layout>
+    </Container>
   );
 }
 

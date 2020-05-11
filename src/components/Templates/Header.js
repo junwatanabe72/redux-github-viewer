@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styled, { withTheme } from 'styled-components';
 
-import HeaderTitle from './HeaderTitle';
-import HeaderLink from './HeaderLink';
-import HeaderMenu from './HeaderMenu';
+import HeaderTitle from '../Molecules/Header/HeaderTitle';
+import HeaderLink from '../Molecules/Header/HeaderLink';
+import HeaderMenu from '../Molecules/Header/HeaderMenu';
 
 //style
-const HeaderElement = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 72px;
   display: flex;
@@ -18,21 +18,17 @@ const HeaderElement = styled.div`
 function Header(props) {
   const [modalIsOpen, setModal] = useState(false);
 
-  const openModal = () => {
+  const workModal = () => {
     setModal(!modalIsOpen);
-  };
-
-  const closeModal = () => {
-    setModal(false);
   };
 
   return (
     <React.Fragment>
-      <HeaderElement>
+      <Container>
         <HeaderTitle />
         <HeaderLink />
-        <HeaderMenu openModal={openModal} modalIsOpen={modalIsOpen} />
-      </HeaderElement>
+        <HeaderMenu workModal={workModal} modalIsOpen={modalIsOpen} />
+      </Container>
     </React.Fragment>
   );
 }

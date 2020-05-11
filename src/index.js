@@ -1,5 +1,5 @@
 import React from 'react';
-import ReacThOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -46,7 +46,7 @@ const store = createStore(
 );
 /* eslint-enable */
 
-ReacThOM.render(
+ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <Provider store={store}>

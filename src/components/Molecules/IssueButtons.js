@@ -1,6 +1,5 @@
 import React from 'react';
-import IssueDelButton from './IssueDelButton';
-import IssueNewButton from './IssueNewButton';
+import Button from '../Atoms/Button';
 import styled from 'styled-components';
 
 const Layout = styled.div`
@@ -10,8 +9,8 @@ const Layout = styled.div`
 function IssueButtons(props) {
   return (
     <Layout>
-      <IssueNewButton />
-      <IssueDelButton />
+      <Button ButtonName={'New'} type={'primary'} />
+      <Button ButtonName={'Delete'} type={'danger'} />
     </Layout>
   );
 }

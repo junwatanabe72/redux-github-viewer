@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ContentChange from './ContentChange';
-import PullRequest from '../PullRequest/Pullrequest';
-import Issue from '../Issue/Issue';
+import ContentChange from '../Molecules/ContentChange';
+import PullRequest from './Pullrequest';
+import Issue from './Issue';
 import styled from 'styled-components';
 
-const TopElement = styled.div``;
+const Container = styled.div``;
 
 function Top(props) {
   const [contentIssue, setContent] = useState(true);
@@ -14,10 +14,10 @@ function Top(props) {
   };
 
   return (
-    <TopElement>
+    <Container>
       <ContentChange contentIssue={contentIssue} changeContent={changeContent} />
       {contentIssue ? <Issue /> : <PullRequest />}
-    </TopElement>
+    </Container>
   );
 }
 

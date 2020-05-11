@@ -1,22 +1,22 @@
 import React from 'react';
-import IssueTitle from './IssueTitle';
+import Logo from '../Atoms/Logo';
 import IssueButtons from './IssueButtons';
-import IssueSearch from './IssueSearch';
+import IssueSearch from '../Atoms/Search';
 
 import styled from 'styled-components';
 
-const IssueFunctionLayoutElement = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
 `;
 
 function IssueFunction(props) {
   return (
-    <IssueFunctionLayoutElement>
-      <IssueTitle />
+    <Container>
+      <Logo name={'Issue'} />
       <IssueSearch />
       <IssueButtons />
-    </IssueFunctionLayoutElement>
+    </Container>
   );
 }
 

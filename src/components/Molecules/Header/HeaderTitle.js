@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkButton from '../LinkCom/LinkCom';
+import LinkButton from '../../Atoms/LinkButton';
 
-const Layout = styled.div`
+const Container = styled.div`
   display: inline-block;
   font-size: 26px;
-  margin: 0 8px;
+  margin: 16px;
 `;
 
 function HeaderTitle(props) {
   return (
-    <Layout>
+    <Container>
       <LinkButton to={'/'} value={'Github Viewer'}></LinkButton>
-    </Layout>
+    </Container>
   );
 }
 

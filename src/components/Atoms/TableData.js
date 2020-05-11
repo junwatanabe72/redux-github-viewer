@@ -18,9 +18,9 @@ function TableData(props) {
       <Td>
         <input type="checkbox" />
       </Td>
-      <Td>{props.issue}</Td>
-      <Td>{props.status}</Td>
-      <Td>作成者Th</Td>
+      <Td>{props.item.issue}</Td>
+      <Td>{props.item.status}</Td>
+      <Td>{props.item.id}</Td>
       <Td>作成日付Th</Td>
       <Td>更新日付Th</Td>
     </tr>
