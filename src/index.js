@@ -6,7 +6,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
-import { reducer } from './reducers/Store';
+import reducer from './reducers/Combine';
 
 const GlobalStyle = createGlobalStyle`
   html {

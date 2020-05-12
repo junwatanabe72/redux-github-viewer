@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import Table from './IssueTable';
-import { addIssue } from '../../reducers/Store';
+import IssueTable from './IssueTable';
+import { addIssue } from '../../reducers/Issue';
 
 const Container = styled.div`
   max-width: 896px;
@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
+    data: state.IssueR.data,
   };
 };
 
@@ -46,7 +46,7 @@ function IssueMain({ createIssue }) {
       <input type="text" value={iss} onChange={onChangeIssue} />
       <input type="text" value={sta} onChange={onChangeStatus} />
       <input type="submit" value="Add" onClick={onSubmit} />
-      <Table />
+      <IssueTable />
     </Container>
   );
 }

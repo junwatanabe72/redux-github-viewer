@@ -28,7 +28,11 @@ const getButtonBcolor = (props) => {
 };
 
 function Button(props) {
-  return <DefaultButton type={props.type}>{props.ButtonName}</DefaultButton>;
+  return (
+    <DefaultButton type={props.type} onClick={props.openModal}>
+      {props.ButtonName}
+    </DefaultButton>
+  );
 }
 
 export default Button;

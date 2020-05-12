@@ -1,18 +1,40 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Modal from 'react-modal';
 import Button from '../Atoms/Button';
 import styled from 'styled-components';
+import ModalWindow from '../Organisms/Modal';
+import { modalPush, modalPop } from '../../reducers/Modal';
 
-const Layout = styled.div`
+const Container = styled.div`
   display: flex;
 `;
 
-function IssueButtons(props) {
+const mapStateToProps = (state) => {
+  return {
+    modalIsOpen: state.ModalR.show,
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    modalPush: (e) => dispatch(modalPush(e)),
+    modalPop: (e) => dispatch(modalPop(e)),
+  };
+}
+
+function IssueButtons({ modalIsOpen, modalPush, modalPop }) {
   return (
-    <Layout>
-      <Button ButtonName={'New'} type={'primary'} />
-      <Button ButtonName={'Delete'} type={'danger'} />
-    </Layout>
+    <React.Fragment>
+      <Container>
+        <Button ButtonName={'New'} type={'primary'} openModal={modalPush} />
+        <Button ButtonName={'Delete'} type={'danger'} />
+      </Container>
+      <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} />
+    </React.Fragment>
   );
 }
 
-export default IssueButtons;
+export default connect(mapStateToProps, mapDispatchToProps)(IssueButtons);
+
+// export default IssueButtons;

@@ -22,14 +22,14 @@ const initialState = {
   data: initialData,
 };
 
-export function reducer(state = initialState, action) {
+export default function IssueReducer(state = initialState, action) {
   let newState = { ...state };
   const { issue, status } = action.payload || {};
   switch (action.type) {
     case ADD_ISSUE:
       newState.index++;
       newState.data[newState.index] = { id: newState.index, issue, status };
-      return newState;
+      return { ...newState };
     // case REMOVE_TODO:
     //   let newData = { ...newState.data };
     //   delete newData[id];

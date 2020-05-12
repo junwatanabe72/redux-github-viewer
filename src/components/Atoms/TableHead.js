@@ -1,23 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import TableHeadCell from './TableHeadCell';
+import TableCheckBoxCell from './TableCheckBoxCell';
 
-const Th = styled.th`
-  min-width: 100px;
-  border-top: solid 1px #ccc;
-  text-align: center;
-`;
-
-function TableHead() {
+function TableHead(props) {
   return (
     <tr>
-      <Th>
-        <input type="checkbox" />
-      </Th>
-      <Th>issue</Th>
-      <Th>ステータス</Th>
-      <Th>作成者</Th>
-      <Th>作成日付</Th>
-      <Th>更新日付</Th>
+      <TableCheckBoxCell />
+      <TableHeadCell value={'issue'} />
+      <TableHeadCell value={'status'} />
+      <TableHeadCell value={'author'} />
+      <TableHeadCell value={'date'} />
+      <TableHeadCell value={'update'} />
     </tr>
   );
 }
