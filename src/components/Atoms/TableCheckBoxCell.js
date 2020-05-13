@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledTh = styled.th`
@@ -9,9 +9,12 @@ const StyledTh = styled.th`
 `;
 
 function TableCheckBoxCell(props) {
+  const _propsFunction = () => {
+    props.propsFunction(props.value);
+  };
   return (
     <StyledTh>
-      <input type="checkbox" />
+      <input type="checkbox" onClick={_propsFunction} />
     </StyledTh>
   );
 }

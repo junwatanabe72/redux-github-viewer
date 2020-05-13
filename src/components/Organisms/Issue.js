@@ -11,10 +11,16 @@ const Container = styled.div`
 `;
 
 function Issue(props) {
+  const [checkedObject, setChecked] = useState();
+  const Checked = (e) => {
+    // const newCheckedObject = { ...checkedObject };
+    setChecked(e);
+  };
   return (
     <Container>
-      <IssueFunction />
-      <IssueMain />
+      <div onClick={console.log({ checkedObject })}></div>
+      <IssueFunction checkedObject={checkedObject} />
+      <IssueMain propsFunction={Checked} />
     </Container>
   );
 }

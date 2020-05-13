@@ -5,10 +5,9 @@ import TableDataCell from './TableDataCell';
 import TableCheckBoxCell from './TableCheckBoxCell';
 
 function TableData(props) {
-  const _propsFunction = () => props.propsFunction(props.item);
   return (
-    <tr onClick={_propsFunction}>
-      <TableCheckBoxCell />
+    <tr>
+      <TableCheckBoxCell value={props.item} propsFunction={props.propsFunction} />
       <TableDataCell value={props.item.issue} />
       <TableDataCell value={props.item.status} />
       <TableDataCell value={props.item.id} />

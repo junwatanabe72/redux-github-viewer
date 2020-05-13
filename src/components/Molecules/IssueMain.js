@@ -7,10 +7,10 @@ const Container = styled.div`
   overflow-x: auto;
 `;
 
-function IssueMain() {
+function IssueMain({ propsFunction }) {
   return (
     <Container>
-      <IssueTable />
+      <IssueTable propsFunction={propsFunction} />
     </Container>
   );
 }

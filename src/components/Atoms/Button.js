@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TableCheckBoxCell from './TableCheckBoxCell';
 
 const DefaultButton = styled.a`
   cursor: pointer;
@@ -11,18 +12,6 @@ const DefaultButton = styled.a`
   border-radius: 6px;
   ${(props) => getButtonBcolor(props)}
 `;
-
-// const DefaultButton = styled.a`
-//   cursor: pointer;
-//   width: 100%;
-//   display: block;
-//   text-align: center;
-//   color: black;
-//   padding: 4px 16px;
-//   margin: 4px;
-//   border-radius: 6px;
-//   ${(props) => getButtonBcolor(props)}
-// `;
 
 const getButtonBcolor = (props) => {
   if (props.type === 'primary') {
@@ -40,9 +29,18 @@ const getButtonBcolor = (props) => {
 
 function Button(props) {
   return (
-    <DefaultButton type={props.type} onClick={props.propsFunction}>
-      {props.ButtonName}
-    </DefaultButton>
+    <div>
+      <DefaultButton type={props.type} onClick={props.propsFunction}>
+        {props.ButtonName}
+      </DefaultButton>
+      <div
+        onClick={() => {
+          console.log(TableCheckBoxCell);
+        }}
+      >
+        aaa
+      </div>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 
 import HeaderTitle from '../Molecules/Header/HeaderTitle';
 import HeaderLink from '../Molecules/Header/HeaderLink';
@@ -15,7 +15,7 @@ const Container = styled.div`
   color: white;
 `;
 
-function Header(props) {
+function Header() {
   const [modalIsOpen, setModal] = useState(false);
 
   const workModal = () => {
@@ -23,13 +23,11 @@ function Header(props) {
   };
 
   return (
-    <React.Fragment>
-      <Container>
-        <HeaderTitle />
-        <HeaderLink />
-        <HeaderMenu workModal={workModal} modalIsOpen={modalIsOpen} />
-      </Container>
-    </React.Fragment>
+    <Container>
+      <HeaderTitle />
+      <HeaderLink />
+      <HeaderMenu workModal={workModal} modalIsOpen={modalIsOpen} />
+    </Container>
   );
 }
 

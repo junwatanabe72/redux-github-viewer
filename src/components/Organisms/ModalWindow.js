@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { connect } from 'react-redux';
+import React from 'react';
 //styled-components
 import Modal from 'react-modal';
 import styled from 'styled-components';
@@ -7,8 +6,6 @@ import ModalMain from '../Molecules/ModalMain';
 Modal.setAppElement('#root');
 
 function ModalWindow(props) {
-  // const [modalIsOpen, setModal] = useState(false);
-
   return (
     <div>
       <Modal isOpen={props.modalIsOpen} modalPop={props.modalPop}>
@@ -19,5 +16,3 @@ function ModalWindow(props) {
 }
 
 export default ModalWindow;
-
-// export default connect(mapStateToProps)(ModalWindow);

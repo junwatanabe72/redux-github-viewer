@@ -12,9 +12,9 @@ export function removeIssue(issue) {
 }
 
 const initialData = {
-  1: { id: 1, issue: 'Issue1', status: 'status1' },
-  2: { id: 2, issue: 'Issue2', status: 'status2' },
-  3: { id: 3, issue: 'Issue3', status: 'status3' },
+  1: { id: 1, title: 'title1', status: 'status1', description: '', createBy: '' },
+  2: { id: 2, title: 'title2', status: 'status2', description: '', createBy: '' },
+  3: { id: 3, title: 'title3', status: 'status3', description: '', createBy: '' },
 };
 
 const initialState = {
