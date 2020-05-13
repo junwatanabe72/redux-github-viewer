@@ -12,7 +12,7 @@ export function modalPop() {
 }
 
 const initialState = {
-  show: false,
+  show: true,
 };
 
 export default function ModalReducer(state = initialState, action) {

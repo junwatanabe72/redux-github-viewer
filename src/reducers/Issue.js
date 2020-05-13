@@ -1,14 +1,14 @@
 // Action Type:
 const ADD_ISSUE = 'ADD_ISSUE';
-// const REMOVE_TODO = 'REMOVE_TODO'
+const REMOVE_ISSUE = 'REMOVE_ISSUE';
 
 // Action Creators:
 export function addIssue(issue) {
   return { type: 'ADD_ISSUE', payload: issue };
 }
 
-export function removeTodo(todo) {
-  return { type: 'REMOVE_TODO', payload: todo };
+export function removeIssue(issue) {
+  return { type: 'REMOVE_ISSUE', payload: issue };
 }
 
 const initialData = {
@@ -24,20 +24,23 @@ const initialState = {
 
 export default function IssueReducer(state = initialState, action) {
   let newState = { ...state };
-  const { issue, status } = action.payload || {};
+  const { issue, status, id } = action.payload || {};
   switch (action.type) {
-    case ADD_ISSUE:
+    case ADD_ISSUE: {
       newState.index++;
       newState.data[newState.index] = { id: newState.index, issue, status };
       return { ...newState };
-    // case REMOVE_TODO:
-    //   let newData = { ...newState.data };
-    //   delete newData[id];
-    //   return {
-    //     ...newState,
-    //     data: newData,
-    //   };
-    default:
+    }
+    case REMOVE_ISSUE: {
+      let newData = { ...newState.data };
+      delete newData[id];
+      return {
+        ...newState,
+        data: newData,
+      };
+    }
+    default: {
       return state;
+    }
   }
 }

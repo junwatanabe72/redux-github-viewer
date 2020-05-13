@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Layout = styled.div`
+const Container = styled.div`
   width: 100%;
   padding: 8px 16px;
 `;
@@ -10,7 +10,7 @@ const Frame = styled.div`
   border-width: 1px;
   border-style: solid;
 `;
-const Search = styled.input`
+const InputBar = styled.input`
   width: 100%;
   padding: 8px;
   border-width: inital;
@@ -21,11 +21,15 @@ const Search = styled.input`
 
 function IssueSearch(props) {
   return (
-    <Layout>
+    <Container>
       <Frame>
-        <Search />
+        <InputBar
+          placeholder={props.PlaceHolder}
+          value={props.value}
+          onChange={props.propsFunction}
+        />
       </Frame>
-    </Layout>
+    </Container>
   );
 }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import Button from '../Atoms/Button';
 import styled from 'styled-components';
-import ModalWindow from '../Organisms/Modal';
+import ModalWindow from '../Organisms/ModalWindow';
 import { modalPush, modalPop } from '../../reducers/Modal';
 
 const Container = styled.div`
@@ -27,7 +27,7 @@ function IssueButtons({ modalIsOpen, modalPush, modalPop }) {
   return (
     <React.Fragment>
       <Container>
-        <Button ButtonName={'New'} type={'primary'} openModal={modalPush} />
+        <Button ButtonName={'New'} type={'primary'} propsFunction={modalPush} />
         <Button ButtonName={'Delete'} type={'danger'} />
       </Container>
       <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} />

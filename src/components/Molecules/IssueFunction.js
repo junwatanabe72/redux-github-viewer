@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Atoms/Logo';
 import IssueButtons from './IssueButtons';
-import IssueSearch from '../Atoms/Search';
+import Input from '../Atoms/Input';
 
 import styled from 'styled-components';
 
@@ -14,7 +14,7 @@ function IssueFunction(props) {
   return (
     <Container>
       <Logo name={'Issue'} />
-      <IssueSearch />
+      <Input PlaceHolder={'issue名で検索'} />
       <IssueButtons />
     </Container>
   );

@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const DefaultButton = styled.a`
   cursor: pointer;
-  width: 100%;
-  display: block;
+  display: inline-block;
   text-align: center;
   color: black;
   padding: 4px 16px;
@@ -12,6 +11,18 @@ const DefaultButton = styled.a`
   border-radius: 6px;
   ${(props) => getButtonBcolor(props)}
 `;
+
+// const DefaultButton = styled.a`
+//   cursor: pointer;
+//   width: 100%;
+//   display: block;
+//   text-align: center;
+//   color: black;
+//   padding: 4px 16px;
+//   margin: 4px;
+//   border-radius: 6px;
+//   ${(props) => getButtonBcolor(props)}
+// `;
 
 const getButtonBcolor = (props) => {
   if (props.type === 'primary') {
@@ -29,7 +40,7 @@ const getButtonBcolor = (props) => {
 
 function Button(props) {
   return (
-    <DefaultButton type={props.type} onClick={props.openModal}>
+    <DefaultButton type={props.type} onClick={props.propsFunction}>
       {props.ButtonName}
     </DefaultButton>
   );
