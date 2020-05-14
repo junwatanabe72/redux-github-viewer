@@ -10,11 +10,11 @@ const StyledTable = styled.table`
   border: solid 1px #ccc;
 `;
 
-function IssueTable({ propsFunction }) {
+function IssueTable({ propsFunction, serachWord }) {
   return (
     <StyledTable>
       <TableHead />
-      <TableBody propsFunction={propsFunction} />
+      <TableBody propsFunction={propsFunction} serachWord={serachWord} />
     </StyledTable>
   );
 }

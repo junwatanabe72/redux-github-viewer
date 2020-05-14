@@ -12,6 +12,9 @@ const Container = styled.div`
 
 function Issue() {
   const [checkedObject, setChecked] = useState({});
+  const [serachWord, setWord] = useState('');
+
+  //checkedObject
   const CheckedOrCanceled = (e, b) => {
     if (!b) {
       const newState = { ...checkedObject };
@@ -23,46 +26,18 @@ function Issue() {
       setChecked(newState);
     }
   };
+  //checkedObject
+  const InputWord = (e) => {
+    setWord(e.target.value);
+  };
 
   return (
     <Container>
-      <div
-        onClick={() => {
-          console.log({ checkedObject });
-        }}
-      >
-        aaa
-      </div>
-      <IssueFunction checkedObject={checkedObject} />
-      <IssueMain propsFunction={CheckedOrCanceled} />
+      <div onClick={() => console.log({ serachWord })}>aaa</div>
+      <IssueFunction checkedObject={checkedObject} propsFunction={InputWord} />
+      <IssueMain propsFunction={CheckedOrCanceled} serachWord={serachWord} />
     </Container>
   );
 }
 
 export default Issue;
-
-// const [checkedObject, setChecked] = useState({ 1: { index: 1 }, 2: { index: 2 } });
-// const index = Object.values(checkedObject).length,
-// const Checked = (e) => {
-//   const newState = { ...checkedObject };
-
-//   setChecked((newState[index] = { e }));
-// };
-
-// const [checkedObject, setChecked] = useState([]);
-// const Checked = (e) => {
-//   const newState = checkedObject.slice();
-//   newState.unshift(e);
-//   setChecked(newState);
-// };
-// const Checked = (e) => {
-//   const newState = { ...checkedObject };
-//   const index = Object.values(checkedObject).length;
-//   newState[index + 1] = e;
-//   setChecked(newState);
-// // };
-// const Canceled = (e) => {
-//   const newState = { ...checkedObject };
-//   delete newState[e.id];
-//   setChecked(newState);
-// };

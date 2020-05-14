@@ -10,11 +10,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-function IssueFunction({ checkedObject }) {
+function IssueFunction({ checkedObject, propsFunction }) {
   return (
     <Container>
       <Logo name={'Issue'} />
-      <Input PlaceHolder={'issue名で検索'} />
+      <Input PlaceHolder={'issue名で検索'} propsFunction={propsFunction} />
       <IssueButtons checkedObject={checkedObject} />
     </Container>
   );

@@ -7,8 +7,8 @@ function mapStateToProps(state) {
   return { data: state.IssueR.data };
 }
 
-function TableBody({ data, propsFunction }) {
-  const List = Object.values(data);
+function TableBody({ data, propsFunction, serachWord }) {
+  const List = Object.values(data).filter((value) => value.title.includes(serachWord));
   return (
     <tbody>
       {List.map((value) => (

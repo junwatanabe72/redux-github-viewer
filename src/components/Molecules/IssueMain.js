@@ -7,10 +7,10 @@ const Container = styled.div`
   overflow-x: auto;
 `;
 
-function IssueMain({ propsFunction }) {
+function IssueMain({ propsFunction, serachWord }) {
   return (
     <Container>
-      <IssueTable propsFunction={propsFunction} />
+      <IssueTable propsFunction={propsFunction} serachWord={serachWord} />
     </Container>
   );
 }
