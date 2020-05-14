@@ -29,18 +29,9 @@ const getButtonBcolor = (props) => {
 
 function Button(props) {
   return (
-    <div>
-      <DefaultButton type={props.type} onClick={props.propsFunction}>
-        {props.ButtonName}
-      </DefaultButton>
-      <div
-        onClick={() => {
-          console.log(TableCheckBoxCell);
-        }}
-      >
-        aaa
-      </div>
-    </div>
+    <DefaultButton type={props.type} onClick={props.propsFunction}>
+      {props.ButtonName}
+    </DefaultButton>
   );
 }
 

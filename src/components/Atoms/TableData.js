@@ -4,17 +4,26 @@ import styled from 'styled-components';
 import TableDataCell from './TableDataCell';
 import TableCheckBoxCell from './TableCheckBoxCell';
 
-function TableData(props) {
+function TableData({ value, propsFunction }) {
   return (
     <tr>
-      <TableCheckBoxCell value={props.item} propsFunction={props.propsFunction} />
-      <TableDataCell value={props.item.issue} />
-      <TableDataCell value={props.item.status} />
-      <TableDataCell value={props.item.id} />
-      <TableDataCell value={props.item.id} />
-      <TableDataCell value={props.item.id} />
+      <TableCheckBoxCell value={value} propsFunction={propsFunction} />
+      <TableDataCell value={value.title} />
+      <TableDataCell value={value.status} />
+      <TableDataCell value={value.description} />
+      <TableDataCell value={value.createBy} />
+      <TableDataCell value={value.update} />
     </tr>
   );
 }
-
 export default TableData;
+
+{
+  /* <TableCheckBoxCell value={props.value} propsFunction={props.propsFunction} />
+  <TableDataCell value={props.value.title} />
+  <TableDataCell value={props.value.status} />
+  <TableDataCell value={props.value.description} />
+  <TableDataCell value={props.value.createBy} />
+  <TableDataCell value={props.value.update} />
+    </tr > */
+}

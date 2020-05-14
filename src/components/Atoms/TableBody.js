@@ -12,7 +12,7 @@ function TableBody({ data, propsFunction }) {
   return (
     <tbody>
       {List.map((value) => (
-        <TableData key={value.id} item={value} propsFunction={propsFunction} />
+        <TableData key={value.id} value={value} propsFunction={propsFunction} />
       ))}
     </tbody>
   );

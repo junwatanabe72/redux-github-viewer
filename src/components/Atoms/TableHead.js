@@ -7,10 +7,10 @@ function TableHead(props) {
   return (
     <tr>
       <TableCheckBoxCell />
-      <TableHeadCell value={'issue'} />
+      <TableHeadCell value={''} />
       <TableHeadCell value={'status'} />
-      <TableHeadCell value={'author'} />
-      <TableHeadCell value={'date'} />
+      <TableHeadCell value={'description'} />
+      <TableHeadCell value={'createBy'} />
       <TableHeadCell value={'update'} />
     </tr>
   );

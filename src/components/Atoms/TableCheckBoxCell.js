@@ -8,13 +8,15 @@ const StyledTh = styled.th`
   text-align: center;
 `;
 
-function TableCheckBoxCell(props) {
+function TableCheckBoxCell({ value, propsFunction }) {
+  const [checked, setChecked] = useState(false);
   const _propsFunction = () => {
-    props.propsFunction(props.value);
+    propsFunction(value, checked);
+    setChecked(!checked);
   };
   return (
     <StyledTh>
-      <input type="checkbox" onClick={_propsFunction} />
+      <input type="checkbox" onChange={_propsFunction} />
     </StyledTh>
   );
 }

@@ -4,11 +4,11 @@ const REMOVE_ISSUE = 'REMOVE_ISSUE';
 
 // Action Creators:
 export function addIssue(issue) {
-  return { type: 'ADD_ISSUE', payload: issue };
+  return { type: 'ADD_ISSUE', payload: { issue } };
 }
 
 export function removeIssue(issue) {
-  return { type: 'REMOVE_ISSUE', payload: issue };
+  return { type: 'REMOVE_ISSUE', payload: { issue } };
 }
 
 const initialData = {
@@ -23,19 +23,21 @@ const initialState = {
 };
 
 export default function IssueReducer(state = initialState, action) {
-  let newState = { ...state };
-  const { issue, status, id } = action.payload || {};
+  let { index, data } = state;
+  const { issue } = action.payload || {};
+  const newData = { ...data };
+  const id = index + 1;
   switch (action.type) {
     case ADD_ISSUE: {
-      newState.index++;
-      newState.data[newState.index] = { id: newState.index, issue, status };
-      return { ...newState };
+      newData[id] = { ...issue, id };
+      return { ...state, index: id, data: newData };
     }
     case REMOVE_ISSUE: {
-      let newData = { ...newState.data };
-      delete newData[id];
+      for (let key in issue) {
+        delete newData[key];
+      }
       return {
-        ...newState,
+        ...state,
         data: newData,
       };
     }

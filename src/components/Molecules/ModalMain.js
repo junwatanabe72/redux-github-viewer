@@ -33,7 +33,7 @@ function ModalMain({ createIssue, modalPop }) {
   const [iss, setIssue] = useState('');
   const [sta, setStatus] = useState('');
   const onSubmit = () => {
-    const dat = { issue: iss, status: sta };
+    const dat = { title: iss, description: sta };
     if (!dat) {
       return;
     }
