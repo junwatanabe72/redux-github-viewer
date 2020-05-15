@@ -10,11 +10,11 @@ const Container = styled.div`
   border: 1px solid #c0c0c0;
 `;
 
-function ProfileMain(props) {
+function ProfileMain({ UserData }) {
   return (
     <Container>
-      <ProfileData />
-      <ProfileDataB />
+      <ProfileData UserData={UserData} />
+      <ProfileDataB UserData={UserData} />
     </Container>
   );
 }

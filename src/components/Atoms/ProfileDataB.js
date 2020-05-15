@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -13,12 +12,6 @@ const StyledP = styled.p`
   color: black;
 `;
 
-const mapStateToProps = (state) => {
-  return {
-    UserData: state.UserR,
-  };
-};
-
 function ProfileData({ UserData }) {
   return (
     <Container>
@@ -30,4 +23,4 @@ function ProfileData({ UserData }) {
   );
 }
 
-export default connect(mapStateToProps)(ProfileData);
+export default ProfileData;

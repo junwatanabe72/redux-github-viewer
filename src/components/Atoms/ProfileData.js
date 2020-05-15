@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+
 import styled from 'styled-components';
 import Image from './Image';
 
@@ -10,12 +10,6 @@ const Container = styled.div`
   margin: 8px 16px;
   text-align: left;
 `;
-
-const mapStateToProps = (state) => {
-  return {
-    UserData: state.UserR,
-  };
-};
 
 function ProfileData({ UserData }) {
   return (
@@ -28,4 +22,4 @@ function ProfileData({ UserData }) {
   );
 }
 
-export default connect(mapStateToProps)(ProfileData);
+export default ProfileData;
