@@ -15,6 +15,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'; //fontawesomeのsolid�
 import { far } from '@fortawesome/free-regular-svg-icons'; //fontawesomeのregularアイコンのインポート
 library.add(fab, fas, far);
 
+Modal.setAppElement('#root');
 function App() {
   return (
     <div className="App">

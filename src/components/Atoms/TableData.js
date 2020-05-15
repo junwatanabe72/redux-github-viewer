@@ -2,28 +2,40 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import TableDataCell from './TableDataCell';
-import TableCheckBoxCell from './TableCheckBoxCell';
+import TableDataCheckBoxCell from './TableDataCheckBoxCell';
+import ModalWindow from '../Organisms/ModalWindow';
+import { modalPush, modalPop } from '../../reducers/Modal';
 
-function TableData({ value, propsFunction }) {
+const mapStateToProps = (state) => {
+  return {
+    modalIsOpen: state.ModalR.show,
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    modalPush: (e) => dispatch(modalPush(e)),
+    modalPop: (e) => dispatch(modalPop(e)),
+  };
+}
+
+function TableData({ modalIsOpen, value, modalPush, modalPop, propsFunction, checkedAll }) {
   return (
-    <tr>
-      <TableCheckBoxCell value={value} propsFunction={propsFunction} />
-      <TableDataCell value={value.title} />
-      <TableDataCell value={value.status} />
-      <TableDataCell value={value.description} />
-      <TableDataCell value={value.createBy} />
-      <TableDataCell value={value.update} />
-    </tr>
+    <React.Fragment>
+      <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} value={value} boo={true} />
+      <tr>
+        <TableDataCheckBoxCell
+          value={value}
+          propsFunction={propsFunction}
+          checkedAll={checkedAll}
+        />
+        <TableDataCell value={value.title} propsFunction={modalPush} />
+        <TableDataCell value={value.status} propsFunction={modalPush} />
+        <TableDataCell value={value.description} propsFunction={modalPush} />
+        <TableDataCell value={value.createBy} propsFunction={modalPush} />
+        <TableDataCell value={value.update} propsFunction={modalPush} />
+      </tr>
+    </React.Fragment>
   );
 }
-export default TableData;
-
-{
-  /* <TableCheckBoxCell value={props.value} propsFunction={props.propsFunction} />
-  <TableDataCell value={props.value.title} />
-  <TableDataCell value={props.value.status} />
-  <TableDataCell value={props.value.description} />
-  <TableDataCell value={props.value.createBy} />
-  <TableDataCell value={props.value.update} />
-    </tr > */
-}
+export default connect(mapStateToProps, mapDispatchToProps)(TableData);

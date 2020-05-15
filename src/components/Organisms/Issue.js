@@ -33,7 +33,6 @@ function Issue() {
 
   return (
     <Container>
-      <div onClick={() => console.log({ serachWord })}>aaa</div>
       <IssueFunction checkedObject={checkedObject} propsFunction={InputWord} />
       <IssueMain propsFunction={CheckedOrCanceled} serachWord={serachWord} />
     </Container>

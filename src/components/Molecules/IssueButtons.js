@@ -33,7 +33,7 @@ function IssueButtons({ modalIsOpen, modalPush, modalPop, deleteIssue, checkedOb
         <Button ButtonName={'New'} type={'primary'} propsFunction={modalPush} />
         <Button ButtonName={'Delete'} type={'danger'} propsFunction={_deleteIssue} />
       </Container>
-      <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} />
+      <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} boo={false} />
     </React.Fragment>
   );
 }

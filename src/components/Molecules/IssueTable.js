@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import TableHead from '../Atoms/TableHead';
 import TableBody from '../Atoms/TableBody';
@@ -11,10 +11,15 @@ const StyledTable = styled.table`
 `;
 
 function IssueTable({ propsFunction, serachWord }) {
+  const [checkedAll, setCheckedAll] = useState(false);
+  //checkedAll
+  const CheckedOrCanceledAll = () => {
+    setCheckedAll(!checkedAll);
+  };
   return (
     <StyledTable>
-      <TableHead />
-      <TableBody propsFunction={propsFunction} serachWord={serachWord} />
+      <TableHead propsFunction={CheckedOrCanceledAll} />
+      <TableBody propsFunction={propsFunction} serachWord={serachWord} checkedAll={checkedAll} />
     </StyledTable>
   );
 }

@@ -8,8 +8,8 @@ const StyledTd = styled.td`
   text-align: center;
 `;
 
-function TableDataCell(props) {
-  return <StyledTd>{props.value}</StyledTd>;
+function TableDataCell({ propsFunction, value }) {
+  return <StyledTd onClick={propsFunction}>{value}</StyledTd>;
 }
 
 export default TableDataCell;

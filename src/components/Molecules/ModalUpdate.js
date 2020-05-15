@@ -51,22 +51,6 @@ function ModalMain({ createIssue, modalPop, Value }) {
 
   return (
     <Container>
-      <Logo name={'Issueを追加'} />
-      <div
-        onClick={() => {
-          console.log({ Value });
-        }}
-      >
-        fff
-      </div>
-      <label>タイトル</label>
-      <Input
-        PlaceHolder={'タイトルを入力してください。'}
-        value={iss}
-        propsFunction={onChangeIssue}
-      />
-      <label>説明</label>
-      <Input PlaceHolder={'説明を入力してください。'} value={sta} propsFunction={onChangeStatus} />
       <ButtonSet>
         <Button ButtonName={'作成'} propsFunction={onSubmit} />
         <Button ButtonName={'閉じる'} propsFunction={modalPop} />

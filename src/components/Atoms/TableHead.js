@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import TableHeadCell from './TableHeadCell';
-import TableCheckBoxCell from './TableCheckBoxCell';
+import TableHeadCheckBoxCell from './TableHeadCheckBoxCell';
 
-function TableHead(props) {
+function TableHead({ propsFunction }) {
   return (
-    <tr>
-      <TableCheckBoxCell />
-      <TableHeadCell value={''} />
-      <TableHeadCell value={'status'} />
-      <TableHeadCell value={'description'} />
-      <TableHeadCell value={'createBy'} />
-      <TableHeadCell value={'update'} />
-    </tr>
+    <thead>
+      <tr>
+        <TableHeadCheckBoxCell propsFunction={propsFunction} />
+        <TableHeadCell value={''} />
+        <TableHeadCell value={'status'} />
+        <TableHeadCell value={'description'} />
+        <TableHeadCell value={'createBy'} />
+        <TableHeadCell value={'update'} />
+      </tr>
+    </thead>
   );
 }
 

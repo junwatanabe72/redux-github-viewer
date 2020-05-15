@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import TableCheckBoxCell from './TableCheckBoxCell';
 
 const DefaultButton = styled.a`
   cursor: pointer;
@@ -27,10 +26,10 @@ const getButtonBcolor = (props) => {
   }
 };
 
-function Button(props) {
+function Button({ type, propsFunction, ButtonName }) {
   return (
-    <DefaultButton type={props.type} onClick={props.propsFunction}>
-      {props.ButtonName}
+    <DefaultButton type={type} onClick={propsFunction}>
+      {ButtonName}
     </DefaultButton>
   );
 }
