@@ -17,6 +17,10 @@ const ButtonSet = styled.div`
   justify-content: end;
 `;
 
+const StyledSelect = styled.select`
+  width: 64px;
+`;
+
 const mapStateToProps = (state) => {
   return {
     data: state.IssueR.data,
@@ -55,23 +59,17 @@ function ModalUpdate({ createIssue, modalPop, Value, data }) {
   return (
     <Container>
       <Logo name={'Issueを更新'} />
-      <label
-        onClick={() => {
-          console.log(data);
-        }}
-      >
-        タイトル
-      </label>
-      <div></div>
-      <Input PlaceHolder={title} propsFunction={onChangeIssue} />
+      <label>タイトル</label>
+      <Input PlaceHolder={Value.title} value={iss} propsFunction={onChangeIssue} />
       <label>説明</label>
-      <Input
-        PlaceHolder={'説明を入力してください。'}
-        value={'Value.title'}
-        propsFunction={onChangeStatus}
-      />
+      <Input PlaceHolder={Value.description} value={sta} propsFunction={onChangeStatus} />
+      <label>ステータス</label>
+      <StyledSelect>
+        <option>open</option>
+        <option>close</option>
+      </StyledSelect>
       <ButtonSet>
-        <Button ButtonName={'作成'} propsFunction={onSubmit} />
+        <Button ButtonName={'更新'} propsFunction={onSubmit} />
         <Button ButtonName={'閉じる'} propsFunction={modalPop} />
       </ButtonSet>
     </Container>

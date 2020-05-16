@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import ModalUpdate from '../Molecules/ModalUpdate';
 import TableDataCell from './TableDataCell';
 import TableDataCheckBoxCell from './TableDataCheckBoxCell';
 import { modalPush, modalPop } from '../../reducers/Modal';
@@ -16,15 +17,16 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function TableData({ value, modalPush, propsFunction, checkedAll }) {
+function TableData({ value, modalPush, modalPop, propsFunction, checkedAll }) {
+  const _modalPush = () => modalPush(<ModalUpdate modalPop={modalPop} Value={value} />);
   return (
     <tr>
       <TableDataCheckBoxCell value={value} propsFunction={propsFunction} checkedAll={checkedAll} />
-      <TableDataCell value={value.title} propsFunction={modalPush} />
-      <TableDataCell value={value.status} propsFunction={modalPush} />
-      <TableDataCell value={value.description} propsFunction={modalPush} />
-      <TableDataCell value={value.createBy} propsFunction={modalPush} />
-      <TableDataCell value={value.update} propsFunction={modalPush} />
+      <TableDataCell value={value.title} propsFunction={_modalPush} />
+      <TableDataCell value={value.status} propsFunction={_modalPush} />
+      <TableDataCell value={value.description} propsFunction={_modalPush} />
+      <TableDataCell value={value.createBy} propsFunction={_modalPush} />
+      <TableDataCell value={value.update} propsFunction={_modalPush} />
     </tr>
   );
 }
