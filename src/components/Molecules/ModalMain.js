@@ -29,7 +29,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function ModalMain({ createIssue, modalPop, Value }) {
+function ModalMain({ createIssue, modalPop }) {
   const [iss, setIssue] = useState('');
   const [sta, setStatus] = useState('');
   const onSubmit = () => {
@@ -52,13 +52,6 @@ function ModalMain({ createIssue, modalPop, Value }) {
   return (
     <Container>
       <Logo name={'Issueを追加'} />
-      <div
-        onClick={() => {
-          console.log({ Value });
-        }}
-      >
-        fff
-      </div>
       <label>タイトル</label>
       <Input
         PlaceHolder={'タイトルを入力してください。'}

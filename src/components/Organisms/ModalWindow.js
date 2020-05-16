@@ -3,17 +3,13 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 import ModalMain from '../Molecules/ModalMain';
-import ModalUpdate from '../Molecules/ModalUpdate';
 
-function ModalWindow({ modalIsOpen, modalPop, value, boo }) {
-  const [iss, setIssue] = useState(boo);
-  return iss ? (
-    <Modal isOpen={modalIsOpen} modalPop={modalPop} Value={value}>
-      <ModalMain modalPop={modalPop} Value={value} />
-    </Modal>
-  ) : (
-    <Modal isOpen={modalIsOpen} modalPop={modalPop}>
-      <ModalUpdate modalPop={modalPop} />
+Modal.setAppElement('#root');
+
+function ModalWindow({ show, modalPop }) {
+  return (
+    <Modal isOpen={show}>
+      <ModalMain modalPop={modalPop} />
     </Modal>
   );
 }

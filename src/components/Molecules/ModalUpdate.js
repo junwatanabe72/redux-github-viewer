@@ -29,9 +29,12 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function ModalMain({ createIssue, modalPop, Value }) {
+function ModalUpdate({ createIssue, modalPop, Value, data }) {
   const [iss, setIssue] = useState('');
   const [sta, setStatus] = useState('');
+  const [title, setTitle] = useState(Value.title);
+  // const { title } = { Value };
+  const aaa = 'gaga';
   const onSubmit = () => {
     const dat = { title: iss, description: sta };
     if (!dat) {
@@ -51,6 +54,22 @@ function ModalMain({ createIssue, modalPop, Value }) {
 
   return (
     <Container>
+      <Logo name={'Issueを更新'} />
+      <label
+        onClick={() => {
+          console.log(data);
+        }}
+      >
+        タイトル
+      </label>
+      <div></div>
+      <Input PlaceHolder={title} propsFunction={onChangeIssue} />
+      <label>説明</label>
+      <Input
+        PlaceHolder={'説明を入力してください。'}
+        value={'Value.title'}
+        propsFunction={onChangeStatus}
+      />
       <ButtonSet>
         <Button ButtonName={'作成'} propsFunction={onSubmit} />
         <Button ButtonName={'閉じる'} propsFunction={modalPop} />
@@ -59,23 +78,4 @@ function ModalMain({ createIssue, modalPop, Value }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalMain);
-
-// return (
-//   <Container>
-//     <Logo name={'Issueを追加'} />
-//     <label>タイトル</label>
-//     <Input
-//       PlaceHolder={'タイトルを入力してください。'}
-//       value={iss}
-//       propsFunction={onChangeIssue}
-//     />
-//     <label>説明</label>
-//     <Input PlaceHolder={'説明を入力してください。'} value={sta} propsFunction={onChangeStatus} />
-//     <ButtonSet>
-//       <Button ButtonName={'作成'} propsFunction={onSubmit} />
-//       <Button ButtonName={'閉じる'} propsFunction={modalPop} />
-//     </ButtonSet>
-//   </Container>
-// );
-//
+export default connect(mapStateToProps, mapDispatchToProps)(ModalUpdate);

@@ -5,8 +5,8 @@ import Header from './components/Templates/Header';
 import Body from './components/Templates/Body';
 //styled-components
 import styled from 'styled-components';
+import Modal from './Container/ModalContainer';
 //modal
-import Modal from 'react-modal';
 
 //fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'; //fontawesomeのコアファイル
@@ -15,13 +15,13 @@ import { fas } from '@fortawesome/free-solid-svg-icons'; //fontawesomeのsolid�
 import { far } from '@fortawesome/free-regular-svg-icons'; //fontawesomeのregularアイコンのインポート
 library.add(fab, fas, far);
 
-Modal.setAppElement('#root');
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
         <Body />
+        <Modal />
       </Router>
     </div>
   );

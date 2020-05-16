@@ -12,9 +12,7 @@ const Container = styled.div`
 `;
 
 const mapStateToProps = (state) => {
-  return {
-    modalIsOpen: state.ModalR.show,
-  };
+  return {};
 };
 
 function mapDispatchToProps(dispatch) {
@@ -25,19 +23,14 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function IssueButtons({ modalIsOpen, modalPush, modalPop, deleteIssue, checkedObject }) {
+function IssueButtons({ modalPush, modalPop, deleteIssue, checkedObject }) {
   const _deleteIssue = () => deleteIssue(checkedObject);
   return (
-    <React.Fragment>
-      <Container>
-        <Button ButtonName={'New'} type={'primary'} propsFunction={modalPush} />
-        <Button ButtonName={'Delete'} type={'danger'} propsFunction={_deleteIssue} />
-      </Container>
-      <ModalWindow modalIsOpen={modalIsOpen} modalPop={modalPop} boo={false} />
-    </React.Fragment>
+    <Container>
+      <Button ButtonName={'New'} type={'primary'} propsFunction={modalPush} />
+      <Button ButtonName={'Delete'} type={'danger'} propsFunction={_deleteIssue} />
+    </Container>
   );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssueButtons);
-
-// export default IssueButtons;

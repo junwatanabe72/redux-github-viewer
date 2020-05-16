@@ -1,10 +1,11 @@
+import React, { Component } from 'react';
 // Action Type:
 const MODAL_PUSH = 'MODAL_PUSH';
 const MODAL_POP = 'MODAL_POP';
 
 // Action Creators:
-export function modalPush() {
-  return { type: 'MODAL_PUSH' };
+export function modalPush(issue) {
+  return { type: 'MODAL_PUSH', payload: { issue } };
 }
 
 export function modalPop() {
@@ -13,12 +14,17 @@ export function modalPop() {
 
 const initialState = {
   show: false,
+  component: React.createElement('div', null, 'Does it work?'),
 };
 
 export default function ModalReducer(state = initialState, action) {
   switch (action.type) {
     case MODAL_PUSH:
-      return { show: true };
+      return {
+        // ...state,
+        // components: [...state.components, action.payload.components],
+        show: true,
+      };
     case MODAL_POP:
       return {
         show: false,
