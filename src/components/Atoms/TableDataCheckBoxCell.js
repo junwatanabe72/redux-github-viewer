@@ -8,15 +8,11 @@ const StyledTh = styled.th`
   text-align: center;
 `;
 
-function TableDataCheckBoxCell({ value, propsFunction, checkedAll }) {
+function TableDataCheckBoxCell({ value, propsFunction, checkedAll, checkedObject }) {
   const [Checked, setChecked] = useState(false);
-  const [allChecked, setAllChecked] = useState(checkedAll);
 
   const changedCheacked = () => {
     setChecked(!Checked);
-  };
-  const changedCheackedAll = () => {
-    setAllChecked(allChecked);
   };
 
   const _propsFunction = () => {
@@ -24,42 +20,17 @@ function TableDataCheckBoxCell({ value, propsFunction, checkedAll }) {
     changedCheacked();
   };
 
-  // const allFunction = (e) => {
-  //   setChecked(e);
-  //   propsFunction(value, Checked);
-  //   changedCheacked();
-  // };
+  const _propsFunctionAll = () => {
+    propsFunction(value, checkedAll);
+    changedCheacked();
+  };
 
-  return (
-    <StyledTh>
-      {/* <div onClick={() => console.log({ allChecked })}>all</div>
-      <div onClick={() => console.log({ Checked })}>checked</div>
-      <div
-        onClick={() => {
-          changedCheackedAll();
-        }}
-      >
-        checkedddd
-      </div> */}
-
+  const Input =
+    checkedAll === true ? (
+      <input type="checkbox" checked={checkedAll} onChange={_propsFunctionAll} />
+    ) : (
       <input type="checkbox" checked={Checked} onChange={_propsFunction} />
-    </StyledTh>
-  );
+    );
+  return <StyledTh>{Input}</StyledTh>;
 }
-
 export default TableDataCheckBoxCell;
-
-// const CheckedOrCanceled = (e, b) => {
-//   if (!b) {
-//     const newState = { ...checkedObject };
-//     newState[e.id] = e;
-//     setChecked(newState);
-//   } else {
-//     const newState = { ...checkedObject };
-//     delete newState[e.id];
-//     setChecked(newState);
-//   }
-// };
-
-// <input type="checkbox" checked={Checked} onChange={() => {
-//   changedCheackedAll();

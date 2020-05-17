@@ -7,10 +7,28 @@ const Container = styled.div`
   overflow-x: auto;
 `;
 
-function IssueMain({ propsFunction, serachWord }) {
+function IssueMain({
+  propsFunction,
+  serachWord,
+  checkedObject,
+  CheckedOrCanceledAll,
+  checkedAll,
+  data,
+  modalPush,
+  modalPop,
+}) {
   return (
     <Container>
-      <IssueTable propsFunction={propsFunction} serachWord={serachWord} />
+      <IssueTable
+        propsFunction={propsFunction}
+        serachWord={serachWord}
+        checkedObject={checkedObject}
+        CheckedOrCanceledAll={CheckedOrCanceledAll}
+        checkedAll={checkedAll}
+        data={data}
+        modalPush={modalPush}
+        modalPop={modalPop}
+      />
     </Container>
   );
 }

@@ -1,31 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Modal from 'react-modal';
 import Button from '../Atoms/Button';
 import styled from 'styled-components';
 import ModalMain from '../Molecules/ModalMain';
-import { modalPush, modalPop } from '../../reducers/Modal';
-import { removeIssue } from '../../reducers/Issue';
+import IssueTable from './IssueTable';
 
 const Container = styled.div`
   display: flex;
 `;
 
-const mapStateToProps = (state) => {
-  return {};
-};
-
-function mapDispatchToProps(dispatch) {
-  return {
-    modalPush: (e) => dispatch(modalPush(e)),
-    modalPop: (e) => dispatch(modalPop(e)),
-    deleteIssue: (e) => dispatch(removeIssue(e)),
-  };
-}
-
-function IssueButtons({ modalPush, modalPop, deleteIssue, checkedObject }) {
+function IssueButtons({ data, modalPush, modalPop, deleteIssue, checkedObject, checkedAll }) {
   const _modalPush = () => modalPush(<ModalMain modalPop={modalPop} />);
-  const _deleteIssue = () => deleteIssue(checkedObject);
+  const _deleteIssue =
+    checkedAll === true ? () => deleteIssue(data) : () => deleteIssue(checkedObject);
+
   return (
     <Container>
       <Button ButtonName={'New'} type={'primary'} propsFunction={_modalPush} />
@@ -34,4 +21,4 @@ function IssueButtons({ modalPush, modalPop, deleteIssue, checkedObject }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IssueButtons);
+export default IssueButtons;

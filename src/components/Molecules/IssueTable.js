@@ -10,16 +10,33 @@ const StyledTable = styled.table`
   border: solid 1px #ccc;
 `;
 
-function IssueTable({ propsFunction, serachWord }) {
-  const [checkedAll, setCheckedAll] = useState(false);
-  //checkedAll
-  const CheckedOrCanceledAll = () => {
-    setCheckedAll(!checkedAll);
-  };
+function IssueTable({
+  propsFunction,
+  serachWord,
+  checkedObject,
+  CheckedOrCanceledAll,
+  checkedAll,
+  data,
+  modalPush,
+  modalPop,
+}) {
+  // const [checkedAll, setCheckedAll] = useState(false);
+  // //checkedAll
+  // const CheckedOrCanceledAll = () => {
+  //   setCheckedAll(!checkedAll);
+  // };
   return (
     <StyledTable>
       <TableHead propsFunction={CheckedOrCanceledAll} />
-      <TableBody propsFunction={propsFunction} serachWord={serachWord} checkedAll={checkedAll} />
+      <TableBody
+        propsFunction={propsFunction}
+        serachWord={serachWord}
+        checkedObject={checkedObject}
+        checkedAll={checkedAll}
+        data={data}
+        modalPush={modalPush}
+        modalPop={modalPop}
+      />
     </StyledTable>
   );
 }

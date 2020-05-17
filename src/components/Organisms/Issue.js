@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import IssueFunction from '../Molecules/IssueFunction';
 import IssueMain from '../Molecules/IssueMain';
 
@@ -10,10 +9,14 @@ const Container = styled.div`
   padding: 16px;
 `;
 
-function Issue() {
+function Issue({ data, modalPush, modalPop, deleteIssue }) {
   const [checkedObject, setChecked] = useState({});
   const [serachWord, setWord] = useState('');
-
+  const [checkedAll, setCheckedAll] = useState(false);
+  //checkedAll
+  const CheckedOrCanceledAll = () => {
+    setCheckedAll(!checkedAll);
+  };
   //checkedObject
   const CheckedOrCanceled = (e, b) => {
     if (!b) {
@@ -26,15 +29,32 @@ function Issue() {
       setChecked(newState);
     }
   };
-  //checkedObject
+  //serchWord
   const InputWord = (e) => {
     setWord(e.target.value);
   };
 
   return (
     <Container>
-      <IssueFunction checkedObject={checkedObject} propsFunction={InputWord} />
-      <IssueMain propsFunction={CheckedOrCanceled} serachWord={serachWord} />
+      <IssueFunction
+        checkedObject={checkedObject}
+        propsFunction={InputWord}
+        checkedAll={checkedAll}
+        data={data}
+        modalPush={modalPush}
+        modalPop={modalPop}
+        deleteIssue={deleteIssue}
+      />
+      <IssueMain
+        propsFunction={CheckedOrCanceled}
+        serachWord={serachWord}
+        checkedObject={checkedObject}
+        CheckedOrCanceledAll={CheckedOrCanceledAll}
+        checkedAll={checkedAll}
+        data={data}
+        modalPush={modalPush}
+        modalPop={modalPop}
+      />
     </Container>
   );
 }

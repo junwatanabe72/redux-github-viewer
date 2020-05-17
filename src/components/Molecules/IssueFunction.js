@@ -10,12 +10,27 @@ const Container = styled.div`
   align-items: center;
 `;
 
-function IssueFunction({ checkedObject, propsFunction }) {
+function IssueFunction({
+  checkedObject,
+  propsFunction,
+  checkedAll,
+  deleteIssue,
+  data,
+  modalPush,
+  modalPop,
+}) {
   return (
     <Container>
       <Logo name={'Issue'} />
       <Input PlaceHolder={'issue名で検索'} propsFunction={propsFunction} />
-      <IssueButtons checkedObject={checkedObject} />
+      <IssueButtons
+        checkedObject={checkedObject}
+        checkedAll={checkedAll}
+        deleteIssue={deleteIssue}
+        data={data}
+        modalPush={modalPush}
+        modalPop={modalPop}
+      />
     </Container>
   );
 }

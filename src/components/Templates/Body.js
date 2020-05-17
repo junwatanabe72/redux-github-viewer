@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Top from '../Organisms/Top';
 import Profile from '../../Container/ProfileContainer';
 import PullRequest from '../Organisms/Pullrequest';
-import Issue from '../Organisms/Issue';
+import Issue from '../../Container/IssueContainer';
 
 const Container = styled.div`
   max-width: 896px;

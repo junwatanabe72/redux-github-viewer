@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ContentChange from '../Molecules/ContentChange';
 import PullRequest from './Pullrequest';
-import Issue from './Issue';
+
+import Issue from '../../Container/IssueContainer';
 import styled from 'styled-components';
 
 const Container = styled.div``;

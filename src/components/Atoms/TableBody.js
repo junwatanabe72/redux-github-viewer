@@ -1,13 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import TableData from './TableData';
 
-function mapStateToProps(state) {
-  return { data: state.IssueR.data };
-}
-
-function TableBody({ data, propsFunction, serachWord, checkedAll }) {
+function TableBody({
+  data,
+  propsFunction,
+  serachWord,
+  checkedAll,
+  checkedObject,
+  modalPush,
+  modalPop,
+}) {
   const List = Object.values(data).filter((value) => value.title.includes(serachWord));
   return (
     <tbody>
@@ -17,10 +20,13 @@ function TableBody({ data, propsFunction, serachWord, checkedAll }) {
           value={value}
           propsFunction={propsFunction}
           checkedAll={checkedAll}
+          checkedObject={checkedObject}
+          modalPush={modalPush}
+          modalPop={modalPop}
         />
       ))}
     </tbody>
   );
 }
 
-export default connect(mapStateToProps)(TableBody);
+export default TableBody;
