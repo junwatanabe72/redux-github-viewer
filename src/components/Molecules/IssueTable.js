@@ -19,12 +19,8 @@ function IssueTable({
   data,
   modalPush,
   modalPop,
+  changeIssue,
 }) {
-  // const [checkedAll, setCheckedAll] = useState(false);
-  // //checkedAll
-  // const CheckedOrCanceledAll = () => {
-  //   setCheckedAll(!checkedAll);
-  // };
   return (
     <StyledTable>
       <TableHead propsFunction={CheckedOrCanceledAll} />
@@ -36,6 +32,7 @@ function IssueTable({
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
+        changeIssue={changeIssue}
       />
     </StyledTable>
   );

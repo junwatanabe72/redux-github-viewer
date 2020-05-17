@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+
 import styled from 'styled-components';
 import Logo from '../Atoms/Logo';
 import Button from '../Atoms/Button';
 import Input from '../Atoms/Input';
-import { addIssue } from '../../reducers/Issue';
 
 const Container = styled.div`
   display: flex;
@@ -21,36 +20,51 @@ const StyledSelect = styled.select`
   width: 64px;
 `;
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.IssueR.data,
-  };
+const date = new Date();
+const format = 'MM-DD-YYYY';
+const sampleDate = (date, format) => {
+  format = format.replace(/YYYY/, date.getFullYear());
+  format = format.replace(/MM/, date.getMonth() + 1);
+  format = format.replace(/DD/, date.getDate());
+  return format;
+};
+const createDate = sampleDate(date, format).toString();
+
+const status = {
+  open: 'open',
+  close: 'close',
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    createIssue: (e) => dispatch(addIssue(e)),
-  };
-}
+function ModalUpdate({ changeIssue, modalPop, Value }) {
+  const [iss, setIssue] = useState(Value.title);
+  const [des, setDescription] = useState(Value.description);
+  const [sta, setStatus] = useState(Value.status);
 
-function ModalUpdate({ createIssue, modalPop, Value, data }) {
-  const [iss, setIssue] = useState('');
-  const [sta, setStatus] = useState('');
-  const [title, setTitle] = useState(Value.title);
-  // const { title } = { Value };
-  const aaa = 'gaga';
+  const oppositedStatus = Value.status === 'open' ? status.close : status.open;
+
   const onSubmit = () => {
-    const dat = { title: iss, description: sta };
+    const dat = {
+      title: iss,
+      description: des,
+      status: sta,
+      createBy: Value.createBy,
+      id: Value.id,
+      update: createDate,
+    };
     if (!dat) {
       return;
     }
-    createIssue(dat);
+    changeIssue(dat);
     setIssue('');
-    setStatus('');
+    // setStatus('');
+    setDescription('');
     modalPop();
   };
   const onChangeIssue = (e) => {
     setIssue(e.target.value);
+  };
+  const onChangeDescription = (e) => {
+    setDescription(e.target.value);
   };
   const onChangeStatus = (e) => {
     setStatus(e.target.value);
@@ -62,11 +76,11 @@ function ModalUpdate({ createIssue, modalPop, Value, data }) {
       <label>タイトル</label>
       <Input PlaceHolder={Value.title} value={iss} propsFunction={onChangeIssue} />
       <label>説明</label>
-      <Input PlaceHolder={Value.description} value={sta} propsFunction={onChangeStatus} />
+      <Input PlaceHolder={Value.description} value={des} propsFunction={onChangeDescription} />
       <label>ステータス</label>
-      <StyledSelect>
-        <option>open</option>
-        <option>close</option>
+      <StyledSelect onChange={onChangeStatus}>
+        <option>{Value.status}</option>
+        <option>{oppositedStatus}</option>
       </StyledSelect>
       <ButtonSet>
         <Button ButtonName={'更新'} propsFunction={onSubmit} />
@@ -76,4 +90,4 @@ function ModalUpdate({ createIssue, modalPop, Value, data }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUpdate);
+export default ModalUpdate;

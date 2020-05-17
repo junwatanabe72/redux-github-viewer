@@ -35,18 +35,3 @@ export default function ModalReducer(state = initialState, action) {
       return state;
   }
 }
-
-// export default function Modalreducer(state = initialState, action) {
-//   let newState = { ...state };
-//   // const { show } = action.payload || {};
-//   switch (action.type) {
-//     case MODAL_PUSH:
-//       newState.show = true;
-//       return newState;
-//     case MODAL_POP:
-//       newState.show = false;
-//       return newState;
-//     default:
-//       return state;
-//   }
-// }

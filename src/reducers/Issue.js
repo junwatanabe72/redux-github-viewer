@@ -1,20 +1,60 @@
 // Action Type:
 const ADD_ISSUE = 'ADD_ISSUE';
+const UPDATE_ISSUE = 'UPDATE_ISSUE';
 const REMOVE_ISSUE = 'REMOVE_ISSUE';
 
 // Action Creators:
 export function addIssue(issue) {
   return { type: 'ADD_ISSUE', payload: { issue } };
 }
+export function updateIssue(issue) {
+  return { type: 'UPDATE_ISSUE', payload: { issue } };
+}
 
 export function removeIssue(issue) {
   return { type: 'REMOVE_ISSUE', payload: { issue } };
 }
+const date = new Date();
+const format = 'MM-DD-YYYY';
+const sampleDate = (date, format) => {
+  format = format.replace(/YYYY/, date.getFullYear());
+  format = format.replace(/MM/, date.getMonth() + 1);
+  format = format.replace(/DD/, date.getDate());
+
+  return format;
+};
+const createDate = sampleDate(date, format).toString();
+
+const status = {
+  open: 'open',
+  close: 'close',
+};
 
 const initialData = {
-  1: { id: 1, title: 'title1', status: 'status1', description: '', createBy: '' },
-  2: { id: 2, title: 'title2', status: 'status2', description: '', createBy: '' },
-  3: { id: 3, title: 'title3', status: 'status3', description: '', createBy: '' },
+  1: {
+    id: 1,
+    title: 'title1',
+    status: status.open,
+    description: '',
+    createBy: createDate,
+    update: createDate,
+  },
+  2: {
+    id: 2,
+    title: 'title2',
+    status: status.open,
+    description: '',
+    createBy: createDate,
+    update: createDate,
+  },
+  3: {
+    id: 3,
+    title: 'title3',
+    status: status.open,
+    description: '',
+    createBy: createDate,
+    update: createDate,
+  },
 };
 
 const initialState = {
@@ -40,6 +80,11 @@ export default function IssueReducer(state = initialState, action) {
         ...state,
         data: newData,
       };
+    }
+    //update作成
+    case UPDATE_ISSUE: {
+      newData[issue.id] = { ...issue };
+      return { ...state, data: newData };
     }
     default: {
       return state;

@@ -8,8 +8,16 @@ const Container = styled.div`
   display: flex;
 `;
 
-function IssueButtons({ data, modalPush, modalPop, deleteIssue, checkedObject, checkedAll }) {
-  const _modalPush = () => modalPush(<ModalMain modalPop={modalPop} />);
+function IssueButtons({
+  data,
+  modalPush,
+  modalPop,
+  createIssue,
+  deleteIssue,
+  checkedObject,
+  checkedAll,
+}) {
+  const _modalPush = () => modalPush(<ModalMain createIssue={createIssue} modalPop={modalPop} />);
   const _deleteIssue =
     checkedAll === true ? () => deleteIssue(data) : () => deleteIssue(checkedObject);
 

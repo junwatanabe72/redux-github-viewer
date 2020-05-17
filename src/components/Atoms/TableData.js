@@ -4,8 +4,17 @@ import ModalUpdate from '../Molecules/ModalUpdate';
 import TableDataCell from './TableDataCell';
 import TableDataCheckBoxCell from './TableDataCheckBoxCell';
 
-function TableData({ value, modalPush, modalPop, propsFunction, checkedAll, checkedObject }) {
-  const _modalPush = () => modalPush(<ModalUpdate modalPop={modalPop} Value={value} />);
+function TableData({
+  value,
+  modalPush,
+  modalPop,
+  propsFunction,
+  checkedAll,
+  checkedObject,
+  changeIssue,
+}) {
+  const _modalPush = () =>
+    modalPush(<ModalUpdate modalPop={modalPop} Value={value} changeIssue={changeIssue} />);
   return (
     <tr>
       <TableDataCheckBoxCell

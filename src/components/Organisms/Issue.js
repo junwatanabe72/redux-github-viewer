@@ -9,7 +9,7 @@ const Container = styled.div`
   padding: 16px;
 `;
 
-function Issue({ data, modalPush, modalPop, deleteIssue }) {
+function Issue({ data, modalPush, modalPop, createIssue, changeIssue, deleteIssue }) {
   const [checkedObject, setChecked] = useState({});
   const [serachWord, setWord] = useState('');
   const [checkedAll, setCheckedAll] = useState(false);
@@ -44,6 +44,7 @@ function Issue({ data, modalPush, modalPop, deleteIssue }) {
         modalPush={modalPush}
         modalPop={modalPop}
         deleteIssue={deleteIssue}
+        createIssue={createIssue}
       />
       <IssueMain
         propsFunction={CheckedOrCanceled}
@@ -54,6 +55,7 @@ function Issue({ data, modalPush, modalPop, deleteIssue }) {
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
+        changeIssue={changeIssue}
       />
     </Container>
   );

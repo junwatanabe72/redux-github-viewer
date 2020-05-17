@@ -6,19 +6,5 @@ const initialState = {
 };
 
 export default function UserReducer(state = initialState, action) {
-  // let newState = { ...state };
-  // const { issue, status } = action.payload || {};
-  // switch (action.type) {
-  //   case ADD_ISSUE:
-  //     newState.index++;
-  //     newState.data[newState.index] = { id: newState.index, issue, status };
-  //     return { ...newState };
-  // case REMOVE_TODO:
-  //   let newData = { ...newState.data };
-  //   delete newData[id];
-  //   return {
-  //     ...newState,
-  //     data: newData,
-  //   };
   return state;
 }

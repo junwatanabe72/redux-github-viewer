@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { modalPush, modalPop } from '../reducers/Modal';
-import { removeIssue } from '../reducers/Issue';
+import { addIssue, updateIssue, removeIssue } from '../reducers/Issue';
 import Issue from '../components/Organisms/Issue';
 
 function mapStateToProps(state) {
@@ -14,6 +14,8 @@ function mapDispatchToProps(dispatch) {
     modalPush: (e) => dispatch(modalPush(e)),
     modalPop: (e) => dispatch(modalPop(e)),
     deleteIssue: (e) => dispatch(removeIssue(e)),
+    createIssue: (e) => dispatch(addIssue(e)),
+    changeIssue: (e) => dispatch(updateIssue(e)),
   };
 }
 

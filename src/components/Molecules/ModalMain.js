@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Logo from '../Atoms/Logo';
 import Button from '../Atoms/Button';
 import Input from '../Atoms/Input';
-import { addIssue } from '../../reducers/Issue';
 
 const Container = styled.div`
   display: flex;
@@ -17,23 +15,33 @@ const ButtonSet = styled.div`
   justify-content: end;
 `;
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.IssueR.data,
-  };
+const status = {
+  open: 'open',
+  close: 'close',
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    createIssue: (e) => dispatch(addIssue(e)),
-  };
-}
+const date = new Date();
+const format = 'MM-DD-YYYY';
+const sampleDate = (date, format) => {
+  format = format.replace(/YYYY/, date.getFullYear());
+  format = format.replace(/MM/, date.getMonth() + 1);
+  format = format.replace(/DD/, date.getDate());
 
-function ModalMain({ createIssue, modalPop, component }) {
+  return format;
+};
+const createDate = sampleDate(date, format).toString();
+
+function ModalMain({ createIssue, modalPop }) {
   const [iss, setIssue] = useState('');
   const [sta, setStatus] = useState('');
   const onSubmit = () => {
-    const dat = { title: iss, description: sta };
+    const dat = {
+      title: iss,
+      description: sta,
+      status: status.open,
+      createBy: createDate,
+      update: createDate,
+    };
     if (!dat) {
       return;
     }
@@ -52,13 +60,6 @@ function ModalMain({ createIssue, modalPop, component }) {
   return (
     <Container>
       <Logo name={'Issueを追加'} />
-      <label
-        onClick={() => {
-          console.log(component);
-        }}
-      >
-        {component}
-      </label>
       <Input
         PlaceHolder={'タイトルを入力してください。'}
         value={iss}
@@ -74,23 +75,4 @@ function ModalMain({ createIssue, modalPop, component }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalMain);
-
-// return (
-//   <Container>
-//     <Logo name={'Issueを追加'} />
-//     <label>タイトル</label>
-//     <Input
-//       PlaceHolder={'タイトルを入力してください。'}
-//       value={iss}
-//       propsFunction={onChangeIssue}
-//     />
-//     <label>説明</label>
-//     <Input PlaceHolder={'説明を入力してください。'} value={sta} propsFunction={onChangeStatus} />
-//     <ButtonSet>
-//       <Button ButtonName={'作成'} propsFunction={onSubmit} />
-//       <Button ButtonName={'閉じる'} propsFunction={modalPop} />
-//     </ButtonSet>
-//   </Container>
-// );
-//
+export default ModalMain;
