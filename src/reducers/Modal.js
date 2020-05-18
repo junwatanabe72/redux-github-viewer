@@ -1,16 +1,4 @@
-import React, { Component } from 'react';
-// Action Type:
-const MODAL_PUSH = 'MODAL_PUSH';
-const MODAL_POP = 'MODAL_POP';
-
-// Action Creators:
-export function modalPush(argComponent) {
-  return { type: 'MODAL_PUSH', payload: { argComponent } };
-}
-
-export function modalPop() {
-  return { type: 'MODAL_POP', payload: {} };
-}
+import { MODAL_PUSH, MODAL_POP } from '../actions/index';
 
 const initialState = {
   show: false,

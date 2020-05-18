@@ -1,19 +1,5 @@
-// Action Type:
-const ADD_ISSUE = 'ADD_ISSUE';
-const UPDATE_ISSUE = 'UPDATE_ISSUE';
-const REMOVE_ISSUE = 'REMOVE_ISSUE';
+import { ADD_ISSUE, UPDATE_ISSUE, REMOVE_ISSUE } from '../actions/index';
 
-// Action Creators:
-export function addIssue(issue) {
-  return { type: 'ADD_ISSUE', payload: { issue } };
-}
-export function updateIssue(issue) {
-  return { type: 'UPDATE_ISSUE', payload: { issue } };
-}
-
-export function removeIssue(issue) {
-  return { type: 'REMOVE_ISSUE', payload: { issue } };
-}
 const date = new Date();
 const format = 'MM-DD-YYYY';
 const sampleDate = (date, format) => {

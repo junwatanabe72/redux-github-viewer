@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { modalPush, modalPop } from '../reducers/Modal';
-import { addIssue, updateIssue, removeIssue } from '../reducers/Issue';
+import { addIssue, updateIssue, removeIssue, modalPush, modalPop } from '../actions/index';
 import Issue from '../components/Organisms/Issue';
 
 function mapStateToProps(state) {
