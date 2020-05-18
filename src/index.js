@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: white;
+    color: black;
   }
   a:visited {
     color: none;

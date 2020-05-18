@@ -14,10 +14,10 @@ function HeaderLink() {
   return (
     <Container>
       <StyledList>
-        <LinkButton to={'Issue'} value={'Issue'} />
+        <LinkButton to={'Issue'} value={'Issue'} color={'white'} />
       </StyledList>
       <StyledList>
-        <LinkButton to={'PullRequest'} value={'Pull Request'} />
+        <LinkButton to={'PullRequest'} value={'Pull Request'} color={'white'} />
       </StyledList>
     </Container>
   );

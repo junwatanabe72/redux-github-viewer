@@ -16,7 +16,7 @@ function ProfileData({ UserData }) {
     <Container>
       <p>プロフィール</p>
       <p>
-        <Image width={'50px'} image={UserData.profileUrl} />
+        <Image width={'64px'} image={UserData.profileUrl} />
       </p>
     </Container>
   );

@@ -8,11 +8,9 @@ const Container = styled.ul`
 `;
 
 const StyledList = styled.li`
-  padding: 4px 16px;
-  margin: 8px;
-  &:hover {
-    background-color: blue;
-    color: white;
+  width: 180px;
+  height: 30px;
+  margin: 8px 4px;
   }
 `;
 
@@ -20,16 +18,26 @@ function HeaderModal() {
   return (
     <Container>
       <StyledList>
-        <LinkButton to={'/'} value={'Top'} color={'black'} hoverColor={'white'} />
+        <LinkButton to={'/'} value={'Top'} hoverColor={'white'} hoverBcolor={'#0066ff'} />
       </StyledList>
       <StyledList>
-        <LinkButton to={'profile'} value={'Your Profile'} color={'black'} />
+        <LinkButton
+          to={'profile'}
+          value={'Your Profile'}
+          hoverColor={'white'}
+          hoverBcolor={'#0066ff'}
+        />
       </StyledList>
       <StyledList>
-        <LinkButton to={'Issue'} value={'Issue'} color={'black'} />
+        <LinkButton to={'Issue'} value={'Issue'} hoverColor={'white'} hoverBcolor={'#0066ff'} />
       </StyledList>
       <StyledList>
-        <LinkButton to={'PullRequest'} value={'Pull Request'} color={'black'} />
+        <LinkButton
+          to={'PullRequest'}
+          value={'Pull Request'}
+          hoverColor={'white'}
+          hoverBcolor={'#0066ff'}
+        />
       </StyledList>
     </Container>
   );
