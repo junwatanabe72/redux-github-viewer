@@ -10,7 +10,7 @@ const StyledList = styled.li`
   margin: 8px;
 `;
 
-function HeaderLink(props) {
+function HeaderLink() {
   return (
     <Container>
       <StyledList>

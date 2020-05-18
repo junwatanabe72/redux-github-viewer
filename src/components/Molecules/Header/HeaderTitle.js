@@ -8,7 +8,7 @@ const Container = styled.div`
   margin: 16px;
 `;
 
-function HeaderTitle(props) {
+function HeaderTitle() {
   return (
     <Container>
       <LinkButton to={'/'} value={'Github Viewer'}></LinkButton>

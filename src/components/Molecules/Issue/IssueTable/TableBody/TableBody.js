@@ -7,7 +7,6 @@ function TableBody({
   propsFunction,
   serachWord,
   checkedAll,
-  checkedObject,
   modalPush,
   modalPop,
   changeIssue,
@@ -21,7 +20,6 @@ function TableBody({
           value={value}
           propsFunction={propsFunction}
           checkedAll={checkedAll}
-          checkedObject={checkedObject}
           modalPush={modalPush}
           modalPop={modalPop}
           changeIssue={changeIssue}

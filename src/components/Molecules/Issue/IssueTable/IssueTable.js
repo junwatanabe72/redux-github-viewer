@@ -13,7 +13,6 @@ const StyledTable = styled.table`
 function IssueTable({
   propsFunction,
   serachWord,
-  checkedObject,
   CheckedOrCanceledAll,
   checkedAll,
   data,
@@ -27,7 +26,6 @@ function IssueTable({
       <TableBody
         propsFunction={propsFunction}
         serachWord={serachWord}
-        checkedObject={checkedObject}
         checkedAll={checkedAll}
         data={data}
         modalPush={modalPush}

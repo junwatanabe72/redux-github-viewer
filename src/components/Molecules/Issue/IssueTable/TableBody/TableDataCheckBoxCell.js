@@ -8,7 +8,7 @@ const StyledTh = styled.th`
   text-align: center;
 `;
 
-function TableDataCheckBoxCell({ value, propsFunction, checkedAll, checkedObject }) {
+function TableDataCheckBoxCell({ value, propsFunction, checkedAll }) {
   const [Checked, setChecked] = useState(false);
 
   const changedCheacked = () => {

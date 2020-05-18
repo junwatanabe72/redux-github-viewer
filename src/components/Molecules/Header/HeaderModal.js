@@ -16,36 +16,20 @@ const StyledList = styled.li`
   }
 `;
 
-function HeaderModal(props) {
+function HeaderModal() {
   return (
     <Container>
       <StyledList>
-        <LinkButton
-          to={'/'}
-          value={'Top'}
-          color={'black'}
-          hoverColor={'white'}
-          closeModal={props.closeModal}
-        />
+        <LinkButton to={'/'} value={'Top'} color={'black'} hoverColor={'white'} />
       </StyledList>
       <StyledList>
-        <LinkButton
-          to={'profile'}
-          value={'Your Profile'}
-          color={'black'}
-          closeModal={props.closeModal}
-        />
+        <LinkButton to={'profile'} value={'Your Profile'} color={'black'} />
       </StyledList>
       <StyledList>
-        <LinkButton to={'Issue'} value={'Issue'} color={'black'} closeModal={props.closeModal} />
+        <LinkButton to={'Issue'} value={'Issue'} color={'black'} />
       </StyledList>
       <StyledList>
-        <LinkButton
-          to={'PullRequest'}
-          value={'Pull Request'}
-          color={'black'}
-          closeModal={props.closeModal}
-        />
+        <LinkButton to={'PullRequest'} value={'Pull Request'} color={'black'} />
       </StyledList>
     </Container>
   );

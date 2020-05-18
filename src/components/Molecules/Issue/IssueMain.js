@@ -10,7 +10,6 @@ const Container = styled.div`
 function IssueMain({
   propsFunction,
   serachWord,
-  checkedObject,
   CheckedOrCanceledAll,
   checkedAll,
   data,
@@ -23,7 +22,6 @@ function IssueMain({
       <IssueTable
         propsFunction={propsFunction}
         serachWord={serachWord}
-        checkedObject={checkedObject}
         CheckedOrCanceledAll={CheckedOrCanceledAll}
         checkedAll={checkedAll}
         data={data}

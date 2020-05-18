@@ -49,7 +49,6 @@ function Issue({ data, modalPush, modalPop, createIssue, changeIssue, deleteIssu
       <IssueMain
         propsFunction={CheckedOrCanceled}
         serachWord={serachWord}
-        checkedObject={checkedObject}
         CheckedOrCanceledAll={CheckedOrCanceledAll}
         checkedAll={checkedAll}
         data={data}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import HeaderModal from './HeaderModal';
 import ComponentFontAwesomeIcon from '../../Atoms/FontAwesomeIcon';
@@ -19,11 +19,29 @@ const PositionAbsolute = styled.div`
   display: ${(props) => (props.modalIsOpen ? '' : 'none')};
 `;
 
-function HeaderMenu(props) {
+function HeaderMenu({ modalIsOpen, workModal }) {
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickEvent);
+    return function cleanup() {
+      document.removeEventListener('click', handleClickEvent);
+    };
+  });
+
+  const handleClickEvent = (e) => {
+    if (modalIsOpen === false) {
+      return;
+    }
+    if (modalRef && modalRef.current && !modalRef.current.contains(e.target)) {
+      workModal();
+    }
+  };
+
   return (
-    <Container onClick={props.workModal}>
+    <Container ref={modalRef} onClick={workModal}>
       <ComponentFontAwesomeIcon head={'fas'} tail={'bars'} />
-      <PositionAbsolute modalIsOpen={props.modalIsOpen}>
+      <PositionAbsolute modalIsOpen={modalIsOpen}>
         <HeaderModal />
       </PositionAbsolute>
     </Container>
