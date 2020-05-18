@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 32px 16px;
 `;
 
-function Body(props) {
+function Body() {
   return (
     <Container>
       <Route exact path="/" component={Top}></Route>

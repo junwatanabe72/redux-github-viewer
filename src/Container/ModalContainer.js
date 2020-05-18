@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ModalWindow from '../components/Organisms/ModalWindow';
+import ModalWindow from '../components/Templates/ModalWindow';
 
 const mapStateToProps = (state) => {
   return {

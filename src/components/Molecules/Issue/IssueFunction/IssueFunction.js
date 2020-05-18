@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../Atoms/Logo';
+import Logo from '../../../Atoms/Logo';
 import IssueButtons from './IssueButtons';
-import Input from '../Atoms/Input';
+import Input from '../../../Atoms/Input';
 
 import styled from 'styled-components';
 

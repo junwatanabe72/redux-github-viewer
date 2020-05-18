@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import TableHead from '../Atoms/TableHead';
-import TableBody from '../Atoms/TableBody';
+import TableHead from './TableHead/TableHead';
+import TableBody from './TableBody/TableBody';
 
 const StyledTable = styled.table`
   min-width: 240px;

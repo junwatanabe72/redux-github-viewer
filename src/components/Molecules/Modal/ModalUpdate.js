@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-import Logo from '../Atoms/Logo';
-import Button from '../Atoms/Button';
-import Input from '../Atoms/Input';
+import Logo from '../../Atoms/Logo';
+import Button from '../../Atoms/Button';
+import Input from '../../Atoms/Input';
 
 const Container = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ContentChange from '../Molecules/ContentChange';
+import ContentChange from '../Molecules/Top/ContentChange';
 import PullRequest from './Pullrequest';
 
 import Issue from '../../Container/IssueContainer';

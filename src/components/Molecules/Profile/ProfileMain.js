@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProfileData from '../Atoms/ProfileData';
-import ProfileDataB from '../Atoms/ProfileDataB';
+import ProfileData from './ProfileData';
+import ProfileDataB from './ProfileDataB';
 
 const Container = styled.div`
   display: flex;

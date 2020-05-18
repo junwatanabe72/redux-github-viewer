@@ -1,8 +1,7 @@
 import React from 'react';
-import Button from '../Atoms/Button';
+import Button from '../../../Atoms/Button';
 import styled from 'styled-components';
-import ModalMain from '../Molecules/ModalMain';
-import IssueTable from './IssueTable';
+import ModalMain from '../../Modal/ModalMain';
 
 const Container = styled.div`
   display: flex;

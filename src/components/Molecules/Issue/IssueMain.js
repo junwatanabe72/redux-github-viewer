@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import IssueTable from './IssueTable';
+import IssueTable from './IssueTable/IssueTable';
 
 const Container = styled.div`
   max-width: 896px;

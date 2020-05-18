@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ModalUpdate from '../Molecules/ModalUpdate';
+import ModalUpdate from '../../../Modal/ModalUpdate';
 import TableDataCell from './TableDataCell';
 import TableDataCheckBoxCell from './TableDataCheckBoxCell';
 

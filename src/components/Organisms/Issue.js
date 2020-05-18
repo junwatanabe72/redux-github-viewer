@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import IssueFunction from '../Molecules/IssueFunction';
-import IssueMain from '../Molecules/IssueMain';
+import IssueFunction from '../Molecules/Issue/IssueFunction/IssueFunction';
+import IssueMain from '../Molecules/Issue/IssueMain';
 
 //style
 const Container = styled.div`

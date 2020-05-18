@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import Image from './Image';
+import Image from '../../Atoms/Image';
 
 const Container = styled.div`
   width: 50%;
