@@ -10,7 +10,7 @@ const Frame = styled.div`
   border-width: 1px;
   border: 1px solid #ccc;
 `;
-const InputBar = styled.input`
+const InputTextarea = styled.textarea`
   width: 100%;
   padding: 8px;
   border-width: inital;
@@ -19,11 +19,11 @@ const InputBar = styled.input`
   background: none;
 `;
 
-function Input(props) {
+function TextArea(props) {
   return (
     <Container>
       <Frame>
-        <InputBar
+        <InputTextarea
           placeholder={props.PlaceHolder}
           value={props.value}
           onChange={props.propsFunction}
@@ -33,4 +33,4 @@ function Input(props) {
   );
 }
 
-export default Input;
+export default TextArea;

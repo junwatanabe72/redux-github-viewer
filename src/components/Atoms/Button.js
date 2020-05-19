@@ -5,7 +5,6 @@ const DefaultButton = styled.a`
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  color: white;
   padding: 4px 32px;
   margin: 4px;
   border-radius: 6px;
@@ -18,6 +17,7 @@ const DefaultButton = styled.a`
 const getButtonBcolor = (props) => {
   if (props.type === 'primary') {
     return `
+      color: white;
       background-color: rgb(66, 195, 96);
       border-bottom: 2px solid rgb(40, 167, 69);
       &:hover {
@@ -26,6 +26,7 @@ const getButtonBcolor = (props) => {
   `;
   } else if (props.type === 'danger') {
     return `
+    color: white;
       background-color: rgb(215, 58, 73);
       border-bottom: 2px solid rgb(175, 28, 42);
       &:hover {

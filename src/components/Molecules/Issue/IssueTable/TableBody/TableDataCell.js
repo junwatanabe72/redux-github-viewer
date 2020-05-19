@@ -2,11 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const StyledTd = styled.td`
-  min-width: 150px;
-  border-top: solid 1px #ccc;
-  text-align: center;
-`;
+const StyledTd = styled.td``;
 
 function TableDataCell({ propsFunction, value }) {
   return <StyledTd onClick={propsFunction}>{value}</StyledTd>;

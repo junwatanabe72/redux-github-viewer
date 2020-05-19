@@ -4,6 +4,7 @@ import IssueTable from './IssueTable/IssueTable';
 
 const Container = styled.div`
   max-width: 896px;
+  margin: 8px;
   overflow-x: auto;
 `;
 

@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const StyledTh = styled.th`
-  min-width: 100px;
-  border-left: solid 1px #ccc;
-  border-bottom: solid 1px #ccc;
-  text-align: center;
-`;
+const StyledTh = styled.th``;
 
 function TableDataCheckBoxCell({ value, propsFunction, checkedAll }) {
   const [Checked, setChecked] = useState(false);

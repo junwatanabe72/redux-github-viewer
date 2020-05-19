@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledTh = styled.th`
-  min-width: 150px;
-  text-align: center;
+  min-width: 140px;
 `;
 
 function TableHeadCell(props) {

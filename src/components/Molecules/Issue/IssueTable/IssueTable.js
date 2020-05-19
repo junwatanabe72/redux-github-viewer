@@ -7,7 +7,8 @@ const StyledTable = styled.table`
   min-width: 240px;
   margin: 10px 0px 50px;
   border-collapse: collapse;
-  border: solid 1px #ccc;
+  border: solid 3px #ccc;
+  border-radius: 30px;
 `;
 
 function IssueTable({

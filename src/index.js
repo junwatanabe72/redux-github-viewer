@@ -34,6 +34,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: black;
   }
+  textarea{
+    min-height: 150px;
+  }
   a:visited {
     color: none;
   }
