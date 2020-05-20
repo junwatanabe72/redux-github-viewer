@@ -73,8 +73,8 @@ const sampleDate = (date, format) => {
 const createDate = sampleDate(date, format).toString();
 
 const status = {
-  open: 'open',
-  close: 'close',
+  open: 'Open',
+  close: 'Close',
 };
 
 function ModalUpdate({ changeIssue, modalPop, Value }) {
@@ -83,7 +83,7 @@ function ModalUpdate({ changeIssue, modalPop, Value }) {
   const [sta, setStatus] = useState(Value.status);
   const [vaildMessege, setMessage] = useState('');
 
-  const oppositedStatus = Value.status === 'open' ? status.close : status.open;
+  const oppositedStatus = Value.status === status.open ? status.close : status.open;
 
   const onSubmit = () => {
     const data = {

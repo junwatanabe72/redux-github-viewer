@@ -15,11 +15,11 @@ const StyledLink = styled(Link)`
   color: ${(props) => props.color};
 `;
 
-function LinkButton(props) {
+function LinkButton({ to, color, value }) {
   return (
     <List>
-      <StyledLink to={props.to} color={props.color}>
-        {props.value}
+      <StyledLink to={to} color={color}>
+        {value}
       </StyledLink>
     </List>
   );

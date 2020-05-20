@@ -5,7 +5,6 @@ import TableBody from './TableBody/TableBody';
 
 const StyledTable = styled.table`
   min-width: 240px;
-  margin: 10px 0px 50px;
   border: solid 1px #ccc;
   border-radius: 5px;
 `;

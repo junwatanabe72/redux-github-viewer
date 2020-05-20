@@ -5,8 +5,8 @@ const Container = styled.img`
   width: ${(props) => props.width};
 `;
 
-function Image(props) {
-  return <Container width={props.width} src={props.image} />;
+function Image({ width, image }) {
+  return <Container width={width} src={image} />;
 }
 
 export default Image;

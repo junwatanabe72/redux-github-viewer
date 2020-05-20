@@ -20,15 +20,11 @@ const InputBar = styled.input`
   background: none;
 `;
 
-function Input(props) {
+function Input({ PlaceHolder, value, propsFunction }) {
   return (
     <Container>
       <Frame>
-        <InputBar
-          placeholder={props.PlaceHolder}
-          value={props.value}
-          onChange={props.propsFunction}
-        />
+        <InputBar placeholder={PlaceHolder} value={value} onChange={propsFunction} />
       </Frame>
     </Container>
   );

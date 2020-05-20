@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ModalUpdate from '../../../Modal/ModalUpdate';
-import TableDataCell from './TableDataCell';
 import TableDataCheckBoxCell from './TableDataCheckBoxCell';
+import TableDataCell from './TableDataCell';
 
 const StyledTr = styled.tr`
   border-top: solid 1px #ccc;

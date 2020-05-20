@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
 import Header from './components/Templates/Header';
 import Body from './components/Templates/Body';
 import Modal from './Container/ModalContainer';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import styled from 'styled-components';
-import Top from '../Organisms/Top';
-import Profile from '../../Container/ProfileContainer';
-import PullRequest from '../Organisms/Pullrequest';
 import Issue from '../../Container/IssueContainer';
+import Profile from '../../Container/ProfileContainer';
+import Top from '../Organisms/Top';
+import PullRequest from '../Organisms/Pullrequest';
 
 const Container = styled.div`
   max-width: 896px;

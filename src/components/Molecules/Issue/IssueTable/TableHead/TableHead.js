@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import TableHeadCell from './TableHeadCell';
 import TableHeadCheckBoxCell from './TableHeadCheckBoxCell';
+import TableHeadCell from './TableHeadCell';
 
 const StyledTr = styled.tr`
   border-left: solid 1px #ccc;

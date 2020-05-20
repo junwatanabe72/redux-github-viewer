@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 300px;
 `;
 
-function PullRequest(props) {
+function PullRequest() {
   return (
     <Container>
       <Logo name={'PullRequest'} />

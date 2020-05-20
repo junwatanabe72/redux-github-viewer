@@ -29,22 +29,22 @@ const PulreqButton = styled(Button)`
   border-bottom: ${(props) => (!props.contentIssue ? '' : '1px solid rgb(225, 228, 232)')};
 `;
 
-function ContentChange(props) {
+function ContentChange({ contentIssue, changeContent }) {
   return (
     <ButtonList>
-      {props.contentIssue ? (
+      {contentIssue ? (
         <React.Fragment>
-          <IssueButton contentIssue={props.contentIssue}>Issue</IssueButton>
-          <PulreqButton contentIssue={props.contentIssue} onClick={props.changeContent}>
+          <IssueButton contentIssue={contentIssue}>Issue</IssueButton>
+          <PulreqButton contentIssue={contentIssue} onClick={changeContent}>
             Pull Request
           </PulreqButton>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <IssueButton contentIssue={props.contentIssue} onClick={props.changeContent}>
+          <IssueButton contentIssue={contentIssue} onClick={changeContent}>
             Issue
           </IssueButton>
-          <PulreqButton contentIssue={props.contentIssue}>Pull Request</PulreqButton>
+          <PulreqButton contentIssue={contentIssue}>Pull Request</PulreqButton>
         </React.Fragment>
       )}
     </ButtonList>

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import IssueFunction from '../Molecules/Issue/IssueFunction/IssueFunction';
 import IssueMain from '../Molecules/Issue/IssueMain';
 
-//style
 const Container = styled.div`
   margin-top: 16px;
   padding: 16px;

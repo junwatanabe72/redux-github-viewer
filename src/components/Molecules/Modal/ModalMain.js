@@ -54,8 +54,8 @@ const ButtonSet = styled.div`
 `;
 
 const status = {
-  open: 'open',
-  close: 'close',
+  open: 'Open',
+  close: 'Close',
 };
 
 const date = new Date();

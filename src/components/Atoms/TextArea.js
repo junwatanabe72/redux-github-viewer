@@ -18,15 +18,11 @@ const InputTextarea = styled.textarea`
   background: none;
 `;
 
-function TextArea(props) {
+function TextArea({ PlaceHolder, value, propsFunction }) {
   return (
     <Container>
       <Frame>
-        <InputTextarea
-          placeholder={props.PlaceHolder}
-          value={props.value}
-          onChange={props.propsFunction}
-        />
+        <InputTextarea placeholder={PlaceHolder} value={value} onChange={propsFunction} />
       </Frame>
     </Container>
   );

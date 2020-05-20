@@ -8,9 +8,7 @@ const Container = styled.div`
   cursor: pointer;
 `;
 
-function ComponentFontAwesomeIcon(props) {
-  const head = props.head;
-  const tail = props.tail;
+function ComponentFontAwesomeIcon({ head, tail }) {
   return (
     <Container>
       <FontAwesomeIcon icon={(head, tail)} />

@@ -8,8 +8,8 @@ const StyledTh = styled.th`
   border-right: solid 1px white;
 `;
 
-function TableHeadCell(props) {
-  return <StyledTh>{props.value}</StyledTh>;
+function TableHeadCell({ value }) {
+  return <StyledTh>{value}</StyledTh>;
 }
 
 export default TableHeadCell;

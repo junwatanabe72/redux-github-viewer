@@ -1,7 +1,6 @@
 import React from 'react';
-import LinkButton from '../../Atoms/LinkButton';
-
 import styled from 'styled-components';
+import LinkButton from '../../Atoms/LinkButton';
 
 const Container = styled.ul`
   display: flex;

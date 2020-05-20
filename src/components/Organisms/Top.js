@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import ContentChange from '../Molecules/Top/ContentChange';
-import PullRequest from './Pullrequest';
-
-import Issue from '../../Container/IssueContainer';
 import styled from 'styled-components';
+import Issue from '../../Container/IssueContainer';
+import PullRequest from './Pullrequest';
+import ContentChange from '../Molecules/Top/ContentChange';
 
 const Container = styled.div`
   padding: 16px;
 `;
 
-function Top(props) {
+function Top() {
   const [contentIssue, setContent] = useState(true);
 
   const changeContent = () => {
