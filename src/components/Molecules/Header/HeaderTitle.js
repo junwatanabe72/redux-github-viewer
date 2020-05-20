@@ -11,7 +11,7 @@ const Container = styled.div`
 function HeaderTitle() {
   return (
     <Container>
-      <LinkButton to={'/'} color={'white'} value={'Github Viewer'} hoverColor={'none'}></LinkButton>
+      <LinkButton to={'/'} color={'white'} value={'Github Viewer'} hovercolor={'none'}></LinkButton>
     </Container>
   );
 }

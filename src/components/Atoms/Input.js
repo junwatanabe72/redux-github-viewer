@@ -11,7 +11,8 @@ const Frame = styled.div`
   border: 1px solid #ccc;
 `;
 const InputBar = styled.input`
-  width: 100%;
+  display: table-cell;
+  width: 98%;
   padding: 8px;
   border-width: inital;
   border-style: none;

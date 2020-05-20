@@ -8,12 +8,13 @@ const ButtonList = styled.ul`
 const Button = styled.li`
   width: 100%;
   cursor: pointer;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border-radius: 6px 6px 0 0;
 `;
 
 const IssueButton = styled(Button)`
+  color: #808080;
   border-top: ${(props) => (props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};
   border-right: ${(props) => (props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};
   border-left: ${(props) => (props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};
@@ -21,6 +22,7 @@ const IssueButton = styled(Button)`
 `;
 
 const PulreqButton = styled(Button)`
+  color: #808080;
   border-top: ${(props) => (!props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};
   border-right: ${(props) => (!props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};
   border-left: ${(props) => (!props.contentIssue ? '1px solid rgb(225, 228, 232)' : '')};

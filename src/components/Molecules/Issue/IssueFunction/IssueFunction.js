@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
+  padding: 16px;
   align-items: center;
 `;
 
@@ -22,7 +23,7 @@ function IssueFunction({
 }) {
   return (
     <Container>
-      <Logo name={'Issue'} />
+      <Logo name={'Issue'} fontsize={'1.5'} />
       <Input PlaceHolder={'issue名で検索'} propsFunction={propsFunction} />
       <IssueButtons
         checkedObject={checkedObject}

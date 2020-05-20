@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
 import Logo from '../../Atoms/Logo';
 import Button from '../../Atoms/Button';
@@ -101,7 +100,7 @@ function ModalUpdate({ changeIssue, modalPop, Value }) {
       setMessage(errorMessage.title);
       return;
     }
-    if (!data.des) {
+    if (!data.description) {
       setMessage(errorMessage.description);
       return;
     }
@@ -124,7 +123,7 @@ function ModalUpdate({ changeIssue, modalPop, Value }) {
   return (
     <Container>
       <StyledLogo>
-        <Logo name={'Issueを更新'} />
+        <Logo name={'Issueを更新'} fontsize={'1.2'} />
       </StyledLogo>
       <StyledInput>
         <StyledInputTitle>

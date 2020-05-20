@@ -86,7 +86,7 @@ function ModalMain({ createIssue, modalPop }) {
       setMessage(errorMessage.title);
       return;
     }
-    if (!data.des) {
+    if (!data.description) {
       setMessage(errorMessage.description);
       return;
     }
@@ -106,7 +106,7 @@ function ModalMain({ createIssue, modalPop }) {
   return (
     <Container>
       <StyledLogo>
-        <Logo name={'Issueを追加'} />
+        <Logo name={'Issueを追加'} fontsize={'1.2'} />
       </StyledLogo>
       <StyledInput>
         <StyledInputTitle>

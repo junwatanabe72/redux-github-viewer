@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Logo(props) {
-  return <h2>{props.name}</h2>;
+const Styledh2 = styled.h2`
+  font-size: ${(props) => props.fontsize}rem;
+`;
+
+function Logo({ name, fontsize }) {
+  return <Styledh2 fontsize={fontsize}>{name}</Styledh2>;
 }
 
 export default Logo;

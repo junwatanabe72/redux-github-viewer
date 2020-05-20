@@ -11,8 +11,7 @@ const Frame = styled.div`
   border: 1px solid #ccc;
 `;
 const InputTextarea = styled.textarea`
-  width: 100%;
-  padding: 8px;
+  width: 98%;
   border-width: inital;
   border-style: none;
   outline: none;

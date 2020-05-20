@@ -6,7 +6,7 @@ import TableHeadCheckBoxCell from './TableHeadCheckBoxCell';
 const StyledTr = styled.tr`
   border-left: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
-  text-align: center;
+  text-align: left;
 `;
 
 function TableHead({ propsFunction }) {

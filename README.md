@@ -1,66 +1,86 @@
-## process
+## アプリの概要
 
-# 各種ライブラリのインストール
+- redux-github-viewer
+- demo:
+- 経緯:redux を用いた react アプリケーション学習のため、課題として作成。
 
-# 設計の検討
+## 使用した技術
 
-<App>
-  <Header>
-    <HeaderTitle />
-    <HeaderItem />
-    <HeaderItem />
-    <HeaderAc />
-  </Header>
-  <Body>  
-    <Issue>
-      <ContentChange>
-      <IssueMain>
-        <IssueFunction>
-          <Search />
-          <Newbutton />
-          <Deletebutton />
-        </IssueFunction>
-        <IssueContent/>
-      </IssueMain>
-    </Issue>
-    <PullRequest />
-    <Profile />
-  </Body>
-</App>
+- React
+- redux,react-redux
+- react-router
+- react-modal
+- eslint+prettier
+- styled-components
 
-# state の定義
+## 起動方法
 
-#　 route の定義
+```
+git clone ~~~
+cd redux-github-viewer
+yarn install
+yarn start
+```
 
-/  
-/issue  
-/pull-request
-/profile
+## 設計
 
-modal はどうするのか。
+```
+・ actions => actioncreater,actionを定義する。
+・ components => 各種コンポーネントを定義する。
+・ reducers =>issue,profile,modalのreducerを定義し、combinereducerも定義する。
+・ Container =>reducerとcomponentsをconnectする。
+```
 
-# コンポーネントの作成
-
-# コンポーネント間の調整
-
-# 動作確認
-
-store:
-issue={
-title: "a bug in top page",
-status: "open or close",
-author: "jun",
-created: "2020-5-2",
-updated: "2020-5-3"
-}
-
-state
-dispacth
-
-reducer
-action={
-add: issue add,
-delete: issue delete,
-put: issue put,
-find: issue find
-}
+```
+# JSXtree
+<app>
+  <Router>
+      <Header { useState }>
+        <HeaderTitle /> => <LinkButton />
+        <HeaderLink /> => <LinkButton />
+        <HeaderMenu {useRef, useEffect }/> => <ComponentFontAwesomeIcon /> , <HeaderModal />
+      </Header>
+      <Body>
+        <TopRoute>
+          <Top { useState }>
+            <ContentChange/>
+            <Issue /> or<PullRequest />
+          </Top>
+        </TopRoute>
+        <IssueRoute>
+          <Issue {useState}>
+            <IssueFunction>
+              <Logo />
+              <Input/>
+              <IssueButtons> => <Button />
+            </IssueFunction>
+            <IssueMain>
+              <IssueTable>
+                <TableHead> => <TableHeadCheckBoxCell /> , <TableHeadCell />
+                <TableBody>
+                  <TableData> => <TableDataCheckBoxCell {useState} /> , <TableDataCell />
+                </TableBody>
+              </IssueTable>
+            </IssueMain>
+          </Issue>
+        </IssueRoute>
+        <ProfileRoute>
+          <Profile>
+            <Logo/>
+            <Profilemain>
+              <ProfileData/> => <Image />
+              <ProfileDataB/>
+            </Profilemain>
+          </Profile>
+        </ProfileRoute>
+        <PullRequestRoute>
+          <PullRequest> => <Logo />
+        </PullRequestRoute>
+      </Body>
+      <ModalWindow>
+        <ModalMain {useState}/> =>  <Logo />,<Button />,<Input />,<textArea />
+        <ModalUpdate {useState}> =>  <Logo />,<Button />,<Input />,<textArea />
+      </ModalWindow>
+  </Router>
+</app>
+```

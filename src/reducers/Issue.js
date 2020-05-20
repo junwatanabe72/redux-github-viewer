@@ -12,8 +12,8 @@ const sampleDate = (date, format) => {
 const createDate = sampleDate(date, format).toString();
 
 const status = {
-  open: 'open',
-  close: 'close',
+  open: 'Open',
+  close: 'Close',
 };
 
 const initialData = {

@@ -6,7 +6,10 @@ import TableDataCheckBoxCell from './TableDataCheckBoxCell';
 
 const StyledTr = styled.tr`
   border-top: solid 1px #ccc;
-  text-align: center;
+  text-align: left;
+  &:hover {
+    background-color: #f5f5f5;
+  }
 `;
 
 function TableData({ value, modalPush, modalPop, propsFunction, checkedAll, changeIssue }) {

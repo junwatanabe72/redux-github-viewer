@@ -30,7 +30,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint src",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +51,8 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0"
-  }
+    "eslint-plugin-react": "^7.19.0",
+    "gh-pages": "^2.2.0"
+  },
+  "homepage": "https://junwatanabe72.github.io/redux-github-viewer/"
 }

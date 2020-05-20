@@ -7,21 +7,22 @@ const StyledLink = styled(Link)`
   width: 100%;
   color: ${(props) => props.color};
   &:hover {
-    color: ${(props) => props.hoverColor};
-    background-color: ${(props) => props.hoverBcolor};
+    color: ${(props) => props.hovercolor};
+    background-color: ${(props) => props.hoverbackgroundcolor};
   }
 `;
 
-function LinkButton({ to, color, hoverBcolor, hoverColor, value }) {
+function LinkButton({ to, color, hoverbackgroundcolor, hovercolor, value }) {
   return (
-    <StyledLink to={to} color={color} hoverBcolor={hoverBcolor} hoverColor={hoverColor}>
+    <StyledLink
+      to={to}
+      color={color}
+      hoverbackgroundcolor={hoverbackgroundcolor}
+      hovercolor={hovercolor}
+    >
       {value}
     </StyledLink>
   );
 }
 
 export default LinkButton;
-
-// <StyledLink to={props.to} color={props.color} hovercolor={props.hovercolor}>
-//   {props.value}
-// </StyledLink>

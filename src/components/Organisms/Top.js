@@ -5,7 +5,9 @@ import PullRequest from './Pullrequest';
 import Issue from '../../Container/IssueContainer';
 import styled from 'styled-components';
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 16px;
+`;
 
 function Top(props) {
   const [contentIssue, setContent] = useState(true);
