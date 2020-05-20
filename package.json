@@ -1,5 +1,6 @@
 {
   "name": "redux-github-viewer",
+  "homepage": "https://junwatanabe72.github.io/redux-github-viewer/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -53,6 +54,5 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
     "gh-pages": "^2.2.0"
-  },
-  "homepage": "https://junwatanabe72.github.io/redux-github-viewer/"
+  }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-//styled-components
 import Modal from 'react-modal';
-import styled from 'styled-components';
+
 
 const customStyles = {
   // overlay: {

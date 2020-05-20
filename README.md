@@ -1,7 +1,7 @@
 ## アプリの概要
 
 - redux-github-viewer
-- demo:
+- demo: https://junwatanabe72.github.io/redux-github-viewer/
 - 経緯:redux を用いた react アプリケーション学習のため、課題として作成。
 
 ## 使用した技術
