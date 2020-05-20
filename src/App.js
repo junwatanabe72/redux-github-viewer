@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-//components
+
 import Header from './components/Templates/Header';
 import Body from './components/Templates/Body';
 import Modal from './Container/ModalContainer';
-//modal
 
 //fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'; //fontawesomeのコアファイル
@@ -16,7 +15,7 @@ library.add(fab, fas, far);
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/redux-github-viewer">
         <Header />
         <Body />
         <Modal />
