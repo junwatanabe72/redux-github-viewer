@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import IssueFunction from '../Molecules/Issue/IssueFunction/IssueFunction';
-import IssueMain from '../Molecules/Issue/IssueMain';
+import IssueFunction from '../molecules/Issue/IssueFunction/IssueFunction';
+import IssueMain from '../molecules/Issue/IssueMain';
 
 const Container = styled.div`
   margin-top: 16px;
   padding: 16px;
 `;
 
-function Issue({ data, modalPush, modalPop, createIssue, changeIssue, deleteIssue }) {
+function Issue({ data, modalPush, modalPop, addIssue, updateIssue, removeIssue }) {
   const [checkedObject, setChecked] = useState({});
   const [serachWord, setWord] = useState('');
   const [checkedAll, setCheckedAll] = useState(false);
   //checkedAll
   const CheckedOrCanceledAll = () => {
+    const newState = { ...checkedObject };
+    if (!checkedAll) {
+      for (let key in data) {
+        newState[key] = data[key];
+        setChecked(newState);
+      }
+    } else {
+      for (let key in data) {
+        delete newState[key];
+        setChecked(newState);
+      }
+    }
     setCheckedAll(!checkedAll);
   };
+
   //checkedObject
   const CheckedOrCanceled = (e, b) => {
     if (!b) {
@@ -42,8 +55,8 @@ function Issue({ data, modalPush, modalPop, createIssue, changeIssue, deleteIssu
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
-        deleteIssue={deleteIssue}
-        createIssue={createIssue}
+        removeIssue={removeIssue}
+        addIssue={addIssue}
       />
       <IssueMain
         propsFunction={CheckedOrCanceled}
@@ -53,7 +66,7 @@ function Issue({ data, modalPush, modalPop, createIssue, changeIssue, deleteIssu
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
-        changeIssue={changeIssue}
+        updateIssue={updateIssue}
       />
     </Container>
   );

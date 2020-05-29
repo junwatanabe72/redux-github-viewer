@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import Profile from '../components/Organisms/Profile';
+import Profile from '../components/organisms/Profile';
 const mapStateToProps = (state) => {
   return {
-    UserData: state.UserR,
+    userData: state.UserR,
   };
 };
 

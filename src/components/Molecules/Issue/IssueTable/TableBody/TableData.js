@@ -12,9 +12,9 @@ const StyledTr = styled.tr`
   }
 `;
 
-function TableData({ value, modalPush, modalPop, propsFunction, checkedAll, changeIssue }) {
+function TableData({ value, modalPush, modalPop, propsFunction, checkedAll, updateIssue }) {
   const _modalPush = () =>
-    modalPush(<ModalUpdate modalPop={modalPop} Value={value} changeIssue={changeIssue} />);
+    modalPush(<ModalUpdate modalPop={modalPop} Value={value} updateIssue={updateIssue} />);
   return (
     <StyledTr>
       <TableDataCheckBoxCell value={value} propsFunction={propsFunction} checkedAll={checkedAll} />

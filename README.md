@@ -29,6 +29,7 @@ yarn start
 ・ components => 各種コンポーネントを定義する。
 ・ reducers =>issue,profile,modalのreducerを定義し、combinereducerも定義する。
 ・ Container =>reducerとcomponentsをconnectする。
+・ setting =>atomicデザインを元に各種コンポーネントを配置しています。
 ```
 
 ```

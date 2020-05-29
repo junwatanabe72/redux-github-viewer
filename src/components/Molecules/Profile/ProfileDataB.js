@@ -12,15 +12,15 @@ const StyledP = styled.p`
   color: black;
 `;
 
-function ProfileData({ UserData }) {
+function ProfileDataB({ userData }) {
   return (
     <Container>
       <p>ユーザ名</p>
-      <StyledP>{UserData.name}</StyledP>
+      <StyledP>{userData.name}</StyledP>
       <p>メールアドレス</p>
-      <StyledP>{UserData.email}</StyledP>
+      <StyledP>{userData.email}</StyledP>
     </Container>
   );
 }
 
-export default ProfileData;
+export default ProfileDataB;

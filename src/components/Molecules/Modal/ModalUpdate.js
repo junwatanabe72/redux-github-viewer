@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Logo from '../../Atoms/Logo';
-import Button from '../../Atoms/Button';
-import Input from '../../Atoms/Input';
-import TextArea from '../../Atoms/TextArea';
+import Logo from '../../atoms/Logo';
+import Button from '../../atoms/Button';
+import Input from '../../atoms/Input';
+import TextArea from '../../atoms/TextArea';
+import { createDate } from '../../../utils/dataHelper';
 
 const Container = styled.div`
   display: flex;
@@ -62,22 +63,12 @@ const StyledSelectBar = styled.select`
   width: 64px;
 `;
 
-const date = new Date();
-const format = 'MM-DD-YYYY';
-const sampleDate = (date, format) => {
-  format = format.replace(/YYYY/, date.getFullYear());
-  format = format.replace(/MM/, date.getMonth() + 1);
-  format = format.replace(/DD/, date.getDate());
-  return format;
-};
-const createDate = sampleDate(date, format).toString();
-
 const status = {
   open: 'Open',
   close: 'Close',
 };
 
-function ModalUpdate({ changeIssue, modalPop, Value }) {
+function ModalUpdate({ updateIssue, modalPop, Value }) {
   const [iss, setIssue] = useState(Value.title);
   const [des, setDescription] = useState(Value.description);
   const [sta, setStatus] = useState(Value.status);
@@ -105,7 +96,7 @@ function ModalUpdate({ changeIssue, modalPop, Value }) {
       return;
     }
 
-    changeIssue(data);
+    updateIssue(data);
     setIssue('');
     setDescription('');
     modalPop();

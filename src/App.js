@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './components/Templates/Header';
-import Body from './components/Templates/Body';
-import Modal from './Container/ModalContainer';
+import Header from './components/templates/Header';
+import Body from './components/templates/Body';
+import Modal from './container/ModalContainer';
 
 //fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'; //fontawesomeのコアファイル

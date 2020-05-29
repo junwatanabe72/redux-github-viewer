@@ -17,7 +17,7 @@ function IssueTable({
   data,
   modalPush,
   modalPop,
-  changeIssue,
+  updateIssue,
 }) {
   return (
     <StyledTable>
@@ -29,7 +29,7 @@ function IssueTable({
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
-        changeIssue={changeIssue}
+        updateIssue={updateIssue}
       />
     </StyledTable>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from '../../Atoms/Image';
+import Image from '../../atoms/Image';
 
 const Container = styled.div`
   width: 50%;
@@ -10,12 +10,12 @@ const Container = styled.div`
   text-align: left;
 `;
 
-function ProfileData({ UserData }) {
+function ProfileData({ userData }) {
   return (
     <Container>
       <p>プロフィール</p>
       <p>
-        <Image width={'64px'} image={UserData.profileUrl} />
+        <Image width={'64px'} image={userData.profileUrl} />
       </p>
     </Container>
   );

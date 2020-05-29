@@ -14,7 +14,7 @@ function TableBody({
   checkedAll,
   modalPush,
   modalPop,
-  changeIssue,
+  updateIssue,
 }) {
   const List = Object.values(data).filter((value) => value.title.includes(serachWord));
 
@@ -29,7 +29,7 @@ function TableBody({
             checkedAll={checkedAll}
             modalPush={modalPush}
             modalPop={modalPop}
-            changeIssue={changeIssue}
+            updateIssue={updateIssue}
           />
         ))
       ) : (

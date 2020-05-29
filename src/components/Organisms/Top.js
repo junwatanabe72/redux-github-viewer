@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Issue from '../../Container/IssueContainer';
+import Issue from '../../container/IssueContainer';
 import PullRequest from './Pullrequest';
-import ContentChange from '../Molecules/Top/ContentChange';
+import ContentChange from '../molecules/Top/ContentChange';
 
 const Container = styled.div`
   padding: 16px;

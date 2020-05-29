@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkButton from '../../Atoms/LinkButton';
+import LinkButton from '../../atoms/LinkButton';
 
 const Container = styled.ul``;
 
@@ -15,30 +15,39 @@ function HeaderModal() {
   return (
     <Container>
       <StyledList>
-        <LinkButton to={'/'} value={'Top'} hovercolor={'white'} hoverbackgroundcolor={'#0066ff'} />
+        <LinkButton
+          size={'13'}
+          to={'/'}
+          value={'Top'}
+          hoverColor={'white'}
+          hoverBackgroundColor={'#0066ff'}
+        />
       </StyledList>
       <StyledList>
         <LinkButton
+          size={'13'}
           to={'profile'}
           value={'Your Profile'}
-          hovercolor={'white'}
-          hoverbackgroundcolor={'#0066ff'}
+          hoverColor={'white'}
+          hoverBackgroundColor={'#0066ff'}
         />
       </StyledList>
       <StyledList>
         <LinkButton
+          size={'13'}
           to={'Issue'}
           value={'Issue'}
-          hovercolor={'white'}
-          hoverbackgroundcolor={'#0066ff'}
+          hoverColor={'white'}
+          hoverBackgroundColor={'#0066ff'}
         />
       </StyledList>
       <StyledList>
         <LinkButton
+          size={'13'}
           to={'PullRequest'}
           value={'Pull Request'}
-          hovercolor={'white'}
-          hoverbackgroundcolor={'#0066ff'}
+          hoverColor={'white'}
+          hoverBackgroundColor={'#0066ff'}
         />
       </StyledList>
     </Container>

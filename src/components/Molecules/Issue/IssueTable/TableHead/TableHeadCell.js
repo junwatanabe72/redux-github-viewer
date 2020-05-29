@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledTh = styled.th`
   font-size: 14px;
-  min-width: 140px;
+  min-width: 148px;
   border-bottom: solid 1px #ccc;
   border-right: solid 1px white;
 `;

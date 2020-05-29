@@ -38,11 +38,9 @@ const getButtonBcolor = (props) => {
 
 function Button({ type, propsFunction, ButtonName }) {
   return (
-    <div>
-      <DefaultButton type={type} onClick={propsFunction}>
-        {ButtonName}
-      </DefaultButton>
-    </div>
+    <DefaultButton type={type} onClick={propsFunction}>
+      {ButtonName}
+    </DefaultButton>
   );
 }
 

@@ -19,18 +19,26 @@ function TableDataCheckBoxCell({ value, propsFunction, checkedAll }) {
     propsFunction(value, Checked);
     changedCheacked();
   };
-
-  const _propsFunctionAll = () => {
-    propsFunction(value, checkedAll);
+  const _propsFunctionIre = () => {
+    propsFunction(value, !Checked);
     changedCheacked();
   };
 
-  const Input =
-    checkedAll === true ? (
-      <input type="checkbox" checked={checkedAll} onChange={_propsFunctionAll} />
-    ) : (
-      <input type="checkbox" checked={Checked} onChange={_propsFunction} />
-    );
+  let Input;
+
+  if (!checkedAll) {
+    if (Checked) {
+      changedCheacked();
+    }
+    Input = <input type="checkbox" onClick={_propsFunction} />;
+  } else {
+    if (Checked) {
+      Input = <input type="checkbox" onClick={_propsFunctionIre} />;
+    } else {
+      Input = <input type="checkbox" checked={checkedAll} onClick={_propsFunctionIre} />;
+    }
+  }
+
   return <StyledTh>{Input}</StyledTh>;
 }
 export default TableDataCheckBoxCell;

@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../Atoms/Logo';
-import ProfileMain from '../Molecules/Profile/ProfileMain';
+import Logo from '../atoms/Logo';
+import ProfileMain from '../molecules/Profile/ProfileMain';
 
 const Container = styled.div`
   margin: 24px;
   font-size: 16px;
 `;
 
-function Profile({ UserData }) {
+function Profile({ userData }) {
   return (
     <Container>
       <Logo name={'Profile'} />
-      <ProfileMain UserData={UserData} />
+      <ProfileMain userData={userData} />
     </Container>
   );
 }

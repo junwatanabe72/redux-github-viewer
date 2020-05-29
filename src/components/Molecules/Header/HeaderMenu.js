@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import HeaderModal from './HeaderModal';
-import ComponentFontAwesomeIcon from '../../Atoms/FontAwesomeIcon';
+import ComponentFontAwesomeIcon from '../../atoms/FontAwesomeIcon';
 
 const Container = styled.div`
   display: inline-block;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import HeaderTitle from '../Molecules/Header/HeaderTitle';
-import HeaderLink from '../Molecules/Header/HeaderLink';
-import HeaderMenu from '../Molecules/Header/HeaderMenu';
+import HeaderTitle from '../molecules/Header/HeaderTitle';
+import HeaderLink from '../molecules/Header/HeaderLink';
+import HeaderMenu from '../molecules/Header/HeaderMenu';
 
 //style
 const Container = styled.div`

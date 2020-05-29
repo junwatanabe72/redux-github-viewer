@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { addIssue, updateIssue, removeIssue, modalPush, modalPop } from '../actions/index';
-import Issue from '../components/Organisms/Issue';
+import Issue from '../components/organisms/Issue';
 
 function mapStateToProps(state) {
   return {
@@ -9,13 +10,16 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    modalPush: (e) => dispatch(modalPush(e)),
-    modalPop: (e) => dispatch(modalPop(e)),
-    deleteIssue: (e) => dispatch(removeIssue(e)),
-    createIssue: (e) => dispatch(addIssue(e)),
-    changeIssue: (e) => dispatch(updateIssue(e)),
-  };
+  return bindActionCreators(
+    {
+      modalPush,
+      modalPop,
+      addIssue,
+      updateIssue,
+      removeIssue,
+    },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Issue);

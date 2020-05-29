@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import IssueButtons from './IssueButtons';
-import Logo from '../../../Atoms/Logo';
-import Input from '../../../Atoms/Input';
+import Logo from '../../../atoms/Logo';
+import Input from '../../../atoms/Input';
 
 const Container = styled.div`
   display: flex;
@@ -14,8 +14,8 @@ function IssueFunction({
   checkedObject,
   propsFunction,
   checkedAll,
-  createIssue,
-  deleteIssue,
+  addIssue,
+  removeIssue,
   data,
   modalPush,
   modalPop,
@@ -23,12 +23,12 @@ function IssueFunction({
   return (
     <Container>
       <Logo name={'Issue'} fontsize={'1.5'} />
-      <Input PlaceHolder={'issue名で検索'} propsFunction={propsFunction} />
+      <Input placeHolder={'issue名で検索'} propsFunction={propsFunction} />
       <IssueButtons
         checkedObject={checkedObject}
         checkedAll={checkedAll}
-        createIssue={createIssue}
-        deleteIssue={deleteIssue}
+        addIssue={addIssue}
+        removeIssue={removeIssue}
         data={data}
         modalPush={modalPush}
         modalPop={modalPop}
