@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/redux-github-viewer/static/js/main.5b91e9e8.chunk.js",
-    "main.js.map": "/redux-github-viewer/static/js/main.5b91e9e8.chunk.js.map",
+    "main.js": "/redux-github-viewer/static/js/main.47f7e465.chunk.js",
+    "main.js.map": "/redux-github-viewer/static/js/main.47f7e465.chunk.js.map",
     "runtime-main.js": "/redux-github-viewer/static/js/runtime-main.887c466a.js",
     "runtime-main.js.map": "/redux-github-viewer/static/js/runtime-main.887c466a.js.map",
-    "static/js/2.70a0318f.chunk.js": "/redux-github-viewer/static/js/2.70a0318f.chunk.js",
-    "static/js/2.70a0318f.chunk.js.map": "/redux-github-viewer/static/js/2.70a0318f.chunk.js.map",
+    "static/js/2.2ed63e0b.chunk.js": "/redux-github-viewer/static/js/2.2ed63e0b.chunk.js",
+    "static/js/2.2ed63e0b.chunk.js.map": "/redux-github-viewer/static/js/2.2ed63e0b.chunk.js.map",
     "index.html": "/redux-github-viewer/index.html",
-    "precache-manifest.2f414b0a7daf138ee4be6d9e84b921a9.js": "/redux-github-viewer/precache-manifest.2f414b0a7daf138ee4be6d9e84b921a9.js",
+    "precache-manifest.fbfb324e5a0cd519b4a89dff7c3c702a.js": "/redux-github-viewer/precache-manifest.fbfb324e5a0cd519b4a89dff7c3c702a.js",
     "service-worker.js": "/redux-github-viewer/service-worker.js",
-    "static/js/2.70a0318f.chunk.js.LICENSE.txt": "/redux-github-viewer/static/js/2.70a0318f.chunk.js.LICENSE.txt"
+    "static/js/2.2ed63e0b.chunk.js.LICENSE.txt": "/redux-github-viewer/static/js/2.2ed63e0b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.887c466a.js",
-    "static/js/2.70a0318f.chunk.js",
-    "static/js/main.5b91e9e8.chunk.js"
+    "static/js/2.2ed63e0b.chunk.js",
+    "static/js/main.47f7e465.chunk.js"
   ]
 }
